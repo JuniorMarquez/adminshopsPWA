@@ -2,36 +2,13 @@
 	<div class="page-content">
 		<div class="card card-style">
 			<div class="content mb-0">
-				<p class="mb-n1 color-highlight font-600">Your Awesome </p>
-				<h1 class="font-26 font-800">Articles</h1>
-				<p>
-				A list of of thumbnail articles, these are great for use in elements such a listing of articles.
-				</p>
-				<a href="#" class="d-flex">
+				<a href="#" class="d-flex" *ngFor="let post of posts">
 				<div class="mr-auto">
-					<h5 class="font-600 pt-2">We love every part of building products for you.</h5>
-					<span class="color-highlight opacity-60">Envato Mobile News</span>
+					<h5 class="font-600 pt-2">{{post.tittle}}</h5>
+					<span class="color-highlight opacity-60">{{post.status}}</span>
 				</div>
 				<div class="ml-4 mb-4">
-					<img src="assets/assetsadmin/images/pictures/8s.jpg" class="rounded-sm" width="100">
-				</div>
-				</a>
-				<a href="#" class="d-flex">
-					<div class="mr-auto">
-					<h5 class="font-600 pt-2">Awesome, fast and intuitive are Appkits keywords.</h5>
-					<span class="color-highlight opacity-60">Envato Mobile News</span>
-				</div>
-				<div class="ml-4 mb-4">
-					<img src="assets/assetsadmin/images/pictures/13s.jpg" class="rounded-sm" width="100">
-				</div>
-				</a>
-				<a href="#" class="d-flex">
-				<div class="mr-auto">
-					<h5 class="font-600 pt-2">The best Mobile Templates on Envato Market.</h5>
-					<span class="color-highlight opacity-60">Envato Mobile News</span>
-				</div>
-				<div class="ml-4 mb-4">
-					<img src="assets/assetsadmin/images/pictures/16s.jpg" class="rounded-sm" width="100">
+					<img src="{{post.images[0]}}" class="rounded-sm" width="100">
 				</div>
 				</a>
 			</div>

@@ -4,6 +4,9 @@ import { Location } from '@angular/common';
 import { Router } from '@angular/router';
 import { UserWService } from "../../services/user-w.service";
 
+import { DataApiService} from '../../services/data-api.service';
+import { PostInterface } from '../../models/post-interface'; 
+    
 @Component({
   selector: 'app-blog',
   templateUrl: './blog.component.html',
@@ -12,6 +15,7 @@ import { UserWService } from "../../services/user-w.service";
 export class BlogComponent implements OnInit {
 
   constructor(
+  private dataApi: DataApiService,
 	private route:ActivatedRoute,
 	private location: Location,
 	public _uw:UserWService
@@ -21,7 +25,13 @@ export class BlogComponent implements OnInit {
     url2 = "assets/assetsadmin/scripts/bootstrap.min.js";
     url3 = "assets/assetsadmin/scripts/custom.js";
 
+
+  public posts:PostInterface;
+
+
+
   ngOnInit() {
+    this.getAllPosts();
   		if (this._uw.loaded==true){
           this.loadAPI = new Promise(resolve => {
             this.loadScript();
@@ -31,6 +41,18 @@ export class BlogComponent implements OnInit {
         }
       this._uw.loaded=true;
   }
+
+    getAllPosts(){
+        this.dataApi.getAllPosts().subscribe((res:any) => {
+      if (res[0] === undefined){
+        console.log("no");
+       }else{
+        this.posts=res;            
+        }
+     });  
+    }
+
+
      	public loadScript() {
       let node = document.createElement("script");
       node.src = this.url;
