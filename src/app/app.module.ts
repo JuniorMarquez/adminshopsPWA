@@ -9,7 +9,7 @@ import { Component, Inject} from '@angular/core';
 import { XunkCalendarModule } from '../xunk-calendar/xunk-calendar.module';
 //RUTAS
 import { app_routing } from "./app.routes";       
-import { AppComponent } from './app.component';
+
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 //DIRECTIVAS
@@ -42,6 +42,7 @@ import { MatRadioModule } from '@angular/material/radio';
 
 //COMPONENTS
 
+import { AppComponent } from './app.component';
 import { TopbarComponent } from './components/topbar/topbar.component';
 import { SliderComponent } from './components/slider/slider.component';
 import { ProductsComponent } from './components/products/products.component';
@@ -53,6 +54,7 @@ import { AccountComponent } from './components/account/account.component';
 
 @NgModule({
   declarations: [
+    AppComponent,
     TopbarComponent,
     SliderComponent,
     ProductsComponent,
