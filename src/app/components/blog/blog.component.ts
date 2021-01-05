@@ -3,7 +3,6 @@ import { ActivatedRoute, Params} from '@angular/router';
 import { Location } from '@angular/common';
 import { Router } from '@angular/router';
 import { UserWService } from "../../services/user-w.service";
-
 import { DataApiService} from '../../services/data-api.service';
 import { PostInterface } from '../../models/post-interface'; 
     
@@ -27,8 +26,6 @@ export class BlogComponent implements OnInit {
 
 
   public posts:PostInterface;
-
-
 
   ngOnInit() {
     this.getAllPosts();

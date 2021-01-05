@@ -1,120 +1,18 @@
 <div id="page">	
 	<div class="content mb-0">
-		<a href="page-chat.html" class="d-flex mb-3">
+		<a href="page-chat.html" class="d-flex mb-3"  *ngFor="let order of orders; index as i" >
 			<div>
 				<img src="assets/assetsadmin/images/pictures/order.jpg" width="60" class="rounded-xl mr-3">
 			</div>
 			<div>
-				<h5 class="font-16 font-600">J</h5>
-				<p class="line-height-s mt-1 opacity-70">This is a sample chat box, it looks pretty sweet and has text in it.</p>
+				<h5 class="font-16 font-600">{{order.personaContacto}}</h5>
+				<p class="line-height-s mt-1 opacity-70">{{order.email}}</p>
 			</div>
 			<div class="align-self-center pl-3">
 				<i class="fa fa-angle-right opacity-20"></i>
 			</div>
 		</a>
 		<div class="divider mb-3"></div>
-		<a href="page-chat.html" class="d-flex mb-3">
-			<div>
-				<img src="assets/assetsadmin/images/pictures/order.jpg" width="60" class="rounded-xl mr-3">
-			</div>
-			<div>
-				<h5 class="font-16 font-600">Jack Runner</h5>
-				<p class="line-height-s mt-1 opacity-70">This is a sample chat box, it looks pretty sweet and has text in it.</p>
-			</div>
-			<div class="align-self-center pl-3">
-				<i class="fa fa-angle-right opacity-20"></i>
-			</div>
-		</a>
-		<div class="divider mb-3"></div>
-		<a href="page-chat.html" class="d-flex mb-3">
-			<div>
-				<img src="assets/assetsadmin/images/pictures/order.jpg" width="60" class="rounded-xl mr-3">
-			</div>
-			<div>
-				<h5 class="font-16 font-600">Gina Droid</h5>
-				<p class="line-height-s mt-1 opacity-70">This is a sample chat box, it looks pretty sweet and has text in it.</p>
-			</div>
-			<div class="align-self-center pl-3">
-				<i class="fa fa-angle-right opacity-20"></i>
-			</div>
-		</a>
-		<div class="divider mb-3"></div>
-		<a href="page-chat.html" class="d-flex mb-3">
-			<div>
-				<img src="assets/assetsadmin/images/pictures/order.jpg" width="60" class="rounded-xl mr-3">
-			</div>
-			<div>
-				<h5 class="font-16 font-600">Anna Model</h5>
-				<p class="line-height-s mt-1 opacity-70">This is a sample chat box, it looks pretty sweet and has text in it.</p>
-			</div>
-			<div class="align-self-center pl-3">
-				<i class="fa fa-angle-right opacity-20"></i>
-			</div>
-		</a>
-		<div class="divider mb-3"></div>
-		<a href="page-chat.html" class="d-flex mb-3">
-			<div>
-				<img src="assets/assetsadmin/images/pictures/order.jpg" width="60" class="rounded-xl mr-3">
-			</div>
-			<div>
-				<h5 class="font-16 font-600">Donna Doe</h5>
-				<p class="line-height-s mt-1 opacity-70">This is a sample chat box, it looks pretty sweet and has text in it.</p>
-			</div>
-			<div class="align-self-center pl-3">
-				<i class="fa fa-angle-right opacity-20"></i>
-			</div>
-		</a>
-		<div class="divider mb-3"></div>
-		<a href="page-chat.html" class="d-flex mb-3">
-			<div>
-				<img src="assets/assetsadmin/images/pictures/order.jpg" width="60" class="rounded-xl mr-3">
-			</div>
-			<div>
-				<h5 class="font-16 font-600">James Him</h5>
-				<p class="line-height-s mt-1 opacity-70">This is a sample chat box, it looks pretty sweet and has text in it.</p>
-			</div>
-			<div class="align-self-center pl-3">
-			<i class="fa fa-angle-right opacity-20"></i>
-			</div>
-		</a>
-		<div class="divider mb-3"></div>
-		<a href="page-chat.html" class="d-flex mb-3">
-			<div>
-				<img src="assets/assetsadmin/images/pictures/order.jpg" width="60" class="rounded-xl mr-3">
-			</div>
-			<div>
-				<h5 class="font-16 font-600">Paul Mic</h5>
-				<p class="line-height-s mt-1 opacity-70">This is a sample chat box, it looks pretty sweet and has text in it.</p>
-			</div>
-			<div class="align-self-center pl-3">
-			<i class="fa fa-angle-right opacity-20"></i>
-			</div>
-		</a>
-		<div class="divider mb-3"></div>
-		<a href="page-chat.html" class="d-flex mb-3">
-			<div>
-				<img src="assets/assetsadmin/images/pictures/order.jpg" width="60" class="rounded-xl mr-3">
-			</div>
-			<div>
-				<h5 class="font-16 font-600">Rosy Wire</h5>
-				<p class="line-height-s mt-1 opacity-70">This is a sample chat box, it looks pretty sweet and has text in it.</p>
-			</div>
-			<div class="align-self-center pl-3">
-			<i class="fa fa-angle-right opacity-20"></i>
-			</div>
-		</a>
-		<div class="divider mb-3"></div>
-		<a href="page-chat.html" class="d-flex mb-3">
-			<div>
-				<img src="assets/assetsadmin/images/pictures/order.jpg" width="60" class="rounded-xl mr-3">
-			</div>
-			<div>
-				<h5 class="font-16 font-600">Yellow Jane</h5>
-				<p class="line-height-s mt-1 opacity-70">This is a sample chat box, it looks pretty sweet and has text in it.</p>
-			</div>
-			<div class="align-self-center pl-3">
-				<i class="fa fa-angle-right opacity-20"></i>
-			</div>
-		</a>
+		
 	</div>
 </div>

@@ -11,6 +11,7 @@ import { InfoInterface } from '../models/info-interface';
 import { ContactInterface } from '../models/contact-interface';
 import { ValidationInterface } from '../models/validation-interface';
 import { UserWService } from "./user-w.service";
+import { OrderInterface } from '../models/order-interface';
 
 @Injectable({
   providedIn: 'root'
@@ -28,6 +29,8 @@ export class DataApiService {
 	book: Observable<any>;
 	validations: Observable<any>;
 	validation: Observable<any>;
+	orders: Observable<any>;
+	order: Observable<any>;
   constructor(
   	public _uw:UserWService,
   	private http: HttpClient, 
@@ -38,6 +41,14 @@ export class DataApiService {
   		"Content-Type":"application/json",
   		Authorization: this.authService.getToken()
   		});
+  	getOrderPending(){	
+		const url_api='https://db.buckapi.com:3027/api/orders?filter[where][status]=new';
+		return (this.orders = this.http.get(url_api));
+	}
+	getOrders(){	
+		const url_api = 'https://db.buckapi.com:3027/api/orders';
+		return this.http.get(url_api);
+	}
   	getBookPending(){	
 		const url_api='https://db.buckapi.com:3027/api/book?filter[where][status]=pending';
 		return (this.books = this.http.get(url_api));
