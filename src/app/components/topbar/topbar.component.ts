@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params} from '@angular/router';
-
 import { Location } from '@angular/common';
 import { Router } from '@angular/router';
+   import { UserWService } from "../../services/user-w.service";
 
 
 @Component({
@@ -12,11 +12,15 @@ import { Router } from '@angular/router';
 })
 export class TopbarComponent implements OnInit {
 
-  constructor(   private route:ActivatedRoute,
-    private location: Location
+  constructor(   
+  	public router: Router,
+  	private route:ActivatedRoute,
+    private location: Location,
+      public _uw:UserWService
     ) { }
 
   ngOnInit() {
+    
   }
 
 }

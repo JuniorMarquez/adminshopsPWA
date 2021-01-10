@@ -63,6 +63,7 @@ import { AccountComponent } from './components/account/account.component';
     HomeComponent,
     OrdersComponent,
     AccountComponent,
+
   ],
   imports: [
     BrowserModule,

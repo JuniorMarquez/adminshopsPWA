@@ -29,6 +29,11 @@ export class OrdersComponent implements OnInit {
   public order:OrderInterface;
 
   ngOnInit() {
+      this._uw.routeProducts=false;
+    this._uw.routeOrders=true;
+    this._uw.routeHome=false;
+    this._uw.routeAccount=false;
+    this._uw.routeBlog=false;
          this.getOrders();
      this.getOrdersTamano();
   		if (this._uw.loaded==true){

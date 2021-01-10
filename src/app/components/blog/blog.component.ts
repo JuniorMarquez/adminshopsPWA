@@ -28,6 +28,11 @@ export class BlogComponent implements OnInit {
   public posts:PostInterface;
 
   ngOnInit() {
+    this._uw.routeProducts=false;
+    this._uw.routeOrders=false;
+    this._uw.routeHome=false;
+    this._uw.routeAccount=false;
+    this._uw.routeBlog=true;
     this.getAllPosts();
   		if (this._uw.loaded==true){
           this.loadAPI = new Promise(resolve => {

@@ -22,6 +22,11 @@ export class HomeComponent implements OnInit {
     url3 = "assets/assetsadmin/scripts/custom.js";
 
   ngOnInit() {
+    this._uw.routeProducts=false;
+    this._uw.routeOrders=false;
+    this._uw.routeHome=true;
+    this._uw.routeAccount=false;
+    this._uw.routeBlog=false;
 		if (this._uw.loaded==true){
           this.loadAPI = new Promise(resolve => {
             this.loadScript();

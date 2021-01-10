@@ -4,68 +4,79 @@
 			<div class="divider mb-1"></div>
 			<div class="d-flex content mt-0 mb-1"></div>
 			<div class="story-slider text-center owl-carousel mb-3">
-				<div class="mr-3"><a data-menu="menu-story" href="#"><img src="assets/assetsadmin/images/pictures/1s.jpg" width="60" class="rounded-circle mx-auto mb-n4 border border-m"><br><span class="d-block pt-2 font-12 color-theme opacity-60">PWA</span></a></div>
-				<div class="mr-3"><a data-menu="menu-story" href="#"><img src="assets/assetsadmin/images/pictures/31s.jpg" width="60" class="rounded-circle mx-auto mb-n4 border border-m"><br><span class="d-block pt-2 font-12 color-theme opacity-60">Mobile</span></a></div>
-				<div class="mr-3"><a data-menu="menu-story" href="#"><img src="assets/assetsadmin/images/pictures/25s.jpg" width="60" class="rounded-circle mx-auto mb-n4 border border-m"><br><span class="d-block pt-2 font-12 color-theme opacity-60">Bootstrap</span></a></div>
-				<div class="mr-3"><a data-menu="menu-story" href="#"><img src="assets/assetsadmin/images/pictures/22s.jpg" width="60" class="rounded-circle mx-auto mb-n4 border border-m"><br><span class="d-block pt-2 font-12 color-theme opacity-60">Dark</span></a></div>
-				<div class="mr-3"><a data-menu="menu-story" href="#"><img src="assets/assetsadmin/images/pictures/16s.jpg" width="60" class="rounded-circle mx-auto mb-n4 border border-m"><br><span class="d-block pt-2 font-12 color-theme opacity-60">Flexbile</span></a></div>
-				<div class="mr-3"><a data-menu="menu-story" href="#"><img src="assets/assetsadmin/images/pictures/12s.jpg" width="60" class="rounded-circle mx-auto mb-n4 border border-m"><br><span class="d-block pt-2 font-12 color-theme opacity-60">Trending</span></a></div>
-				<div class="mr-3"><a data-menu="menu-story" href="#"><img src="assets/assetsadmin/images/pictures/1s.jpg" width="60" class="rounded-circle mx-auto mb-n4 border border-m"><br><span class="d-block pt-2 font-12 color-theme opacity-60">PWA</span></a></div>
-				<div class="mr-3"><a data-menu="menu-story" href="#"><img src="assets/assetsadmin/images/pictures/31s.jpg" width="60" class="rounded-circle mx-auto mb-n4 border border-m"><br><span class="d-block pt-2 font-12 color-theme opacity-60">Mobile</span></a></div>
-				<div class="mr-3"><a data-menu="menu-story" href="#"><img src="assets/assetsadmin/images/pictures/25s.jpg" width="60" class="rounded-circle mx-auto mb-n4 border border-m"><br><span class="d-block pt-2 font-12 color-theme opacity-60">Bootstrap</span></a></div>
-				<div class="mr-3"><a data-menu="menu-story" href="#"><img src="assets/assetsadmin/images/pictures/22s.jpg" width="60" class="rounded-circle mx-auto mb-n4 border border-m"><br><span class="d-block pt-2 font-12 color-theme opacity-60">Dark</span></a></div>
-				<div class="mr-3"><a data-menu="menu-story" href="#"><img src="assets/assetsadmin/images/pictures/16s.jpg" width="60" class="rounded-circle mx-auto mb-n4 border border-m"><br><span class="d-block pt-2 font-12 color-theme opacity-60">Flexbile</span></a></div>
-				<div class="mr-3"><a data-menu="menu-story" href="#"><img src="assets/assetsadmin/images/pictures/12s.jpg" width="60" class="rounded-circle mx-auto mb-n4 border border-m"><br><span class="d-block pt-2 font-12 color-theme opacity-60">Trending</span></a></div>
+				<div class="mr-3" *ngFor="let category of categories" ><a data-menu="menu-story" href="#"><img src="{{category.images[0]}}" width="60" class="rounded-circle mx-auto mb-n4 border border-m"><br><span class="d-block pt-2 font-12 color-theme opacity-60">{{category.tittle}}</span></a></div>
+	
 			</div>
 			<div class="page-content ">
 				<div class="content mb-0"></div>
 				<div class="divider divider-margins"></div>
-				<div class="content mb-0">
-					<div class="row mb-0">
-						<div class="col-6">
-							<div class="card mx-0 card-style"  data-menu="menu-item-sheet">
-								<div class="card bg-6" data-card-height="200" style="height: 200px;"></div>
-								<div class="content mt-n2">
-									<p class="font-11 color-highlight font-600 mb-n2">$USD 30</p>
-									<h1 class="font-16">Product name</h1>
-								</div>
-							</div>
-						</div>
-						<div class="col-6">
-							<div class="card mx-0 card-style">
-								<div class="card bg-20" data-card-height="200" style="height: 200px;"></div>
-								<div class="content mt-n2">
-									<p class="font-11 color-highlight font-600 mb-n2">$USD 30</p>
-									<h1 class="font-16">Product name</h1>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="divider divider-margins"></div>
-				<div class="content mb-0">
-					<div class="row mb-0">
-						<div class="col-6">
-						<div class="card card-style mb-0 mx-0 bg-19" data-card-height="250" style="height: 250px;"></div>
-						<div class="card card-style mx-0 mt-n5">
-							<div class="content">
-								<p class="font-11 color-highlight font-600 mb-n2">$USD 30</p>
-								<h1 class="font-16">Product name</h1>
-							</div>
-						</div>
-						</div>
-						<div class="col-6">
-						<div class="card card-style mb-0 mx-0 bg-18" data-card-height="250" style="height: 250px;"></div>
-							<div class="card card-style mx-0 mt-n5">
-								<div class="content">
-									<p class="font-11 color-highlight font-600 mb-n2">$USD 30 </p>
-									<h1 class="font-16">Product name</h1>
-								</div>
-							</div>
-						</div>
+
+				<div class="row text-center mb-0">
+					<div class="col-6 mb-4" *ngFor="let tix of tixs" data-menu="menu-item-sheet"  (click)="viewProduct(tix)">
+						<a ><img src="{{tix.images[0]}}" class="rounded-sm shadow-xl img-fluid"></a>
+					
+						
+						<a >
+						<h5 class="mt-1">{{tix.productName}}</h5>
+					
+						</a>
+						<h1 class="mt-1 mb-n2 font-800">${{tix.globalPrice}}
+							
+						</h1>
+
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
+
+<!-- PRODUCT DETAIL -->
+
+<div id="menu-item-sheet" class="menu menu-box-bottom rounded-m bg-theme" data-menu-height="390">
+	<div class="menu-title">
+		<h1 class="font-22 font-800">{{this._uw.tixPreview.productName}}</h1>
+		<a href="#" class="close-menu"><i class="fa fa-times-circle"></i></a>
+	</div>
+	<div class="content">
+		<div class="divider mt-n2"></div>
+		<div class="d-flex">		
+			<div class="ml-auto mr-4 pr-2">
+				<div class="custom-control android-switch highlight-switch">
+					<input type="checkbox" class="ios-input" id="toggle-id-1">
+					<label class="custom-control-label" for="toggle-id-1"></label>
+				</div>
+			</div>
+		</div>
+		<div class="d-flex mb-4">
+			<div>
+				<img src="{{this._uw.imagePreviewProduct}}" class="rounded-sm" width="80">
+			</div>
+			<div class="w-100 ml-3 pt-1">
+
+
+				<h6 class="font-500 font-14 pb-2"  (click)="editDescription()" [hidden]="this.editingDescription">{{this._uw.tixPreview.description}}</h6>
+				<div class="input-style input-style-2">
+					<span class="input-style-1-active color-highlight" [hidden]="!this.editingDescription">Descripción</span>
+					<input class="form-control" type="number" placeholder="{{this._uw.tixPreview.description}}" value="{{this._uw.tixPreview.description}}"  [hidden]="!this.editingDescription">
+				</div>
+
+
+				<h4 (click)="editPrice()" [hidden]="this.editingPrice">${{this._uw.tixPreview.globalPrice}}</h4>
+				<span class="input-style-1-active color-highlight"  [hidden]="!this.editingPrice">Precio ($USD)</span>
+				<input class="form-control" type="number" placeholder="1" value="{{this._uw.tixPreview.globalPrice}}" [hidden]="!this.editingPrice">
+
+				
+			</div>
+		</div>
+			
+		<a href="#" class="close-menu btn btn-full gradient-blue font-13 btn-m font-600 mt-3 rounded-s" (click)="saveEditing()">Aplicar cambios</a>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	</div>
+</div>
+
+
+<!-- PRODUCT DETAIL END -->

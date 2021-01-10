@@ -4,6 +4,11 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class UserWService {
+	routeHome:boolean=false;
+	routeOrders:boolean=false;
+	routeProducts:boolean=false;
+	routeAccount:boolean=false;
+	routeBlog:boolean=false;
 	admin:boolean;
 	adminName:string;
 	affiliate:boolean;
@@ -25,6 +30,7 @@ export class UserWService {
 	idCard:string;
 	idSelected:string;
 	images:any[]=[];
+	imagePreviewProduct:string;
 	indice:number=0;
 	info:any={};
 	isLogged:boolean=false;
@@ -36,6 +42,7 @@ export class UserWService {
 	proccess:boolean=false;
 	partner:boolean;
 	queue:any[]=[];
+	route:any={};
 	selectorA:boolean;
 	selectorB:boolean;
 	subTotal:number=0;
@@ -45,6 +52,7 @@ export class UserWService {
 	tixsOrigin:any[]=[];
 	tixsDiscount:any={};
 	tixsNew:any={};
+	tixPreview:any={};
 	total:number=0;
 	totalBooks:number;
 	totalDiscount:number=0;

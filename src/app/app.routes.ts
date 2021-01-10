@@ -22,6 +22,7 @@ const app_routes: Routes = [
 	{path:'home',component:HomeComponent},
 	{path:'orders',component:OrdersComponent},
 	{path:'account',component:AccountComponent},
+
 	{path:'**',pathMatch:'full',redirectTo:''}
 	];
 	export const app_routing = RouterModule.forRoot(app_routes);

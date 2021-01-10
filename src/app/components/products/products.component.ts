@@ -3,6 +3,9 @@ import { ActivatedRoute, Params} from '@angular/router';
 import { Location } from '@angular/common';
 import { Router } from '@angular/router';
 import { UserWService } from "../../services/user-w.service";
+import { CategoryInterface } from '../../models/category-interface';
+import { TixInterface } from '../../models/tix-interface'; 
+import { DataApiService } from '../../services/data-api.service';
 
 @Component({
   selector: 'app-products',
@@ -13,15 +16,30 @@ export class ProductsComponent implements OnInit {
 
   constructor(
 	private route:ActivatedRoute,
+  private dataApi: DataApiService,
 	private location: Location,
 	public _uw:UserWService
     ) { }
+  public categories:CategoryInterface;
+    public tixs:TixInterface;
+    public editingPrice=false;
+     public editingDescription=false;
     loadAPI = null;
     url = "assets/assetsadmin/scripts/jquery.js";
     url2 = "assets/assetsadmin/scripts/bootstrap.min.js";
     url3 = "assets/assetsadmin/scripts/custom.js";
   
   ngOnInit() {
+    this._uw.routeProducts=true;
+    this._uw.routeOrders=false;
+    this._uw.routeHome=false;
+    this._uw.routeAccount=false;
+    this._uw.routeBlog=false;
+
+
+
+      this.getAllCategories();
+            this.getAllTixs();
 	if (this._uw.loaded==true){
           this.loadAPI = new Promise(resolve => {
             this.loadScript();
@@ -31,6 +49,47 @@ export class ProductsComponent implements OnInit {
         }
       this._uw.loaded=true;
   }
+
+public editPrice(){
+  this.editingPrice=true;
+}
+public editDescription(){
+  this.editingDescription=true;
+}
+public saveEditing(){
+  this.editingPrice=false;
+  this.editingDescription=false;
+}
+
+  public viewProduct(tix){
+    let tixToView = tix;
+    this._uw.tixPreview=tixToView;
+    this._uw.tixPreview.quantity=1; 
+    this._uw.imagePreviewProduct=this._uw.tixPreview.images[0];
+    // this.getAllTixs();
+    console.log("running");
+  } 
+
+
+  
+  getAllCategories(){
+        this.dataApi.getAllCategories().subscribe((res:any) => {
+      if (res[0] === undefined){
+        console.log("no");
+       }else{
+        this.categories=res;            
+        }
+     });  
+    }
+     getAllTixs(){
+        this.dataApi.getAllTixs().subscribe((res:any) => {
+      if (res[0] === undefined){
+        console.log("no");
+       }else{
+        this.tixs=res;            
+        }
+     });  
+    }
   	public loadScript() {
       let node = document.createElement("script");
       node.src = this.url;

@@ -12,11 +12,18 @@ import { ContactInterface } from '../models/contact-interface';
 import { ValidationInterface } from '../models/validation-interface';
 import { UserWService } from "./user-w.service";
 import { OrderInterface } from '../models/order-interface';
+import { CategoryInterface } from '../models/category-interface';
+	
+
+
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class DataApiService {
+	categories: Observable<any>;
+	category:Observable<any>;
 	tixs: Observable<any>;
 	posts: Observable<any>;
 	tix: Observable<any>;
@@ -47,6 +54,10 @@ export class DataApiService {
 	}
 	getOrders(){	
 		const url_api = 'https://db.buckapi.com:3027/api/orders';
+		return this.http.get(url_api);
+	}
+	getAllCategories(){
+		const url_api = 'https://db.buckapi.com:3027/api/categories?filter[where][status]=activated';
 		return this.http.get(url_api);
 	}
   	getBookPending(){	
