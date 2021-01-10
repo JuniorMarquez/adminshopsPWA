@@ -50,7 +50,7 @@ export class ProductsComponent implements OnInit {
       this._uw.loaded=true;
   }
 
-public getTixsFilter(catego: string){
+public filter(catego: string){
   this._uw.categorySelected=catego;
       let categ = catego; 
       this.dataApi.getTixsFilter(categ).subscribe((res:any) => {
