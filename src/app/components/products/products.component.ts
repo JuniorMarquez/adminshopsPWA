@@ -50,6 +50,21 @@ export class ProductsComponent implements OnInit {
       this._uw.loaded=true;
   }
 
+public getTixsFilter(catego: string){
+  this._uw.categorySelected=catego;
+      let categ = catego; 
+      this.dataApi.getTixsFilter(categ).subscribe((res:any) => {
+        if (res[0] === undefined){
+          }
+        else{
+          this.tixs=res;            
+        }
+      }); 
+    }
+
+
+
+
 public editPrice(){
   this.editingPrice=true;
 }

@@ -20,7 +20,8 @@ export class TopbarComponent implements OnInit {
     ) { }
 
   ngOnInit() {
-    
+    this._uw.selectedQuan=0;
+    this._uw.categorySelected="Todos";
   }
 
 }

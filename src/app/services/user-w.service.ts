@@ -21,6 +21,7 @@ export class UserWService {
 	car:any[]=[];
 	card:any={};
 	cardsResult:any[]=[];
+	categorySelected:string;
 	editingTrek:boolean=false;
 	errorFormAffiliate:boolean;
 	errorFormAddtixs:boolean;
@@ -45,6 +46,7 @@ export class UserWService {
 	route:any={};
 	selectorA:boolean;
 	selectorB:boolean;
+	selectedQuan:number=0;
 	subTotal:number=0;
 	tamano:number=0;
 	tamanoPedidos:number=0;
