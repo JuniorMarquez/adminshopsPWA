@@ -4,17 +4,17 @@
 	<a  class="header-title" [hidden]="!this._uw.routeBlog">Blog</a>
 	<a  class="header-title" [hidden]="!this._uw.routeOrders">Pedidos</a>
 	<a  class="header-title" [hidden]="!this._uw.routeAccount">Cuenta</a>
-	<a href="#" data-back-button class="header-icon header-icon-1"  [hidden]="!this._uw.routeAccount"><i class="fas fa-chevron-left"></i></a>
-	<a href="#" data-menu="menu-main" class="header-icon header-icon-4"  [hidden]="!this._uw.routeAccount"><i class="fa fa-bars"></i></a>
-	<a href="#" data-toggle-theme class="header-icon header-icon-3 show-on-theme-dark" [hidden]="!this._uw.routeAccount"><i class="fas fa-sun"></i></a>
-	<a href="#" data-toggle-theme class="header-icon header-icon-3 show-on-theme-light" [hidden]="!this._uw.routeAccount"><i class="fas fa-moon"></i></a>
+	<a  data-back-button class="header-icon header-icon-1"  [hidden]="!this._uw.routeAccount"><i class="fas fa-chevron-left"></i></a>
+	<a routerLink="account" data-menu="menu-main" class="header-icon header-icon-4" [hidden]="this._uw.routeAccount"><i class="fa fa-user"></i></a>
+	<a data-toggle-theme class="header-icon header-icon-3 show-on-theme-dark" [hidden]="!this._uw.routeAccount"><i class="fas fa-sun"></i></a>
+	<a  data-toggle-theme class="header-icon header-icon-3 show-on-theme-light" [hidden]="!this._uw.routeAccount"><i class="fas fa-moon"></i></a>
 </div>
 <div class="page-title page-title-fixed">
 	<div>
 		<h1 [hidden]="!this._uw.routeHome">Inicio</h1>
 		<!-- <h1 class="font-16 color-dark mb-n3">Welcome Back</h1> -->
 		<h1 [hidden]="!this._uw.routeProducts">Productos</h1>
-		<h1 class="font-16 color-dark mb-n3" [hidden]="!this._uw.routeProducts">{{_uw.categorySelected}} </h1>
+		<h1 class="font-16 color-dark mb-n3" [hidden]="!this._uw.routeProducts" style="margin-top: 0px;">{{_uw.categorySelected}} </h1>
 
 		<!-- <h1 class="font-16 color-dark mb-n3" [hidden]="!this._uw.routeProducts">{{_uw.categorySelected}} ({{_uw.selectedQuan}})</h1> -->
 		<h1 [hidden]="!this._uw.routeBlog">Blog</h1>
@@ -24,11 +24,11 @@
 
 	<a  data-menu="article-1" class="page-title-icon shadow-xl bg-theme mt-2 color-theme"  [hidden]="!this._uw.routeProducts"><i class="fa fa-plus"></i></a>
 
-	<a href="#" class="page-title-icon shadow-xl bg-theme mt-2 color-theme show-on-theme-light" data-toggle-theme [hidden]="!this._uw.routeAccount"><i class="fa fa-moon" ></i></a>
+	<a  class="page-title-icon shadow-xl bg-theme mt-2 color-theme show-on-theme-light" data-toggle-theme [hidden]="!this._uw.routeAccount"><i class="fa fa-moon" ></i></a>
 
 
-	<a href="#" class="page-title-icon shadow-xl bg-theme mt-2 color-theme show-on-theme-dark" data-toggle-theme [hidden]="!this._uw.routeAccount"><i class="fa fa-lightbulb color-yellow-dark"></i></a>
+	<a  class="page-title-icon shadow-xl bg-theme mt-2 color-theme show-on-theme-dark" data-toggle-theme [hidden]="!this._uw.routeAccount"><i class="fa fa-lightbulb color-yellow-dark"></i></a>
 	
-	<a href="#" class="page-title-icon shadow-xl bg-theme mt-2 color-theme" data-menu="menu-main"[hidden]="!this._uw.routeAccount"><i class="fa fa-bars"></i></a>
+	<a routerLink="account" class="page-title-icon shadow-xl bg-theme mt-2 color-theme" [hidden]="this._uw.routeAccount"><i class="fa fa-user"></i></a>
 </div>
 <div class="page-title-clear"></div>

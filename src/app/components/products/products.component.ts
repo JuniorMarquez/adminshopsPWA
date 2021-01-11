@@ -31,7 +31,8 @@ export class ProductsComponent implements OnInit {
     url3 = "assets/assetsadmin/scripts/custom.js";
   
   ngOnInit() {
-    this._uw.categorySelected="all";
+    this.getAllCategories();
+    this._uw.categorySelected="Todos";
     this._uw.routeProducts=true;
     this._uw.routeOrders=false;
     this._uw.routeHome=false;
@@ -56,6 +57,16 @@ export class ProductsComponent implements OnInit {
     this.categories=this._uw.categories;
   }
 
+   
+   getAllCategories(){
+        this.dataApi.getAllCategories().subscribe((res:any) => {
+      if (res[0] === undefined){
+       }else{
+        this._uw.categories=res;  
+        this._uw.selectedQuan=res.length;          
+        }
+     });  
+    }
 
 
 public filter(catego: string){
@@ -87,17 +98,8 @@ public saveEditing(){
     this._uw.tixPreview.quantity=1; 
     this._uw.imagePreviewProduct=this._uw.tixPreview.images[0];
   } 
-
-
   
-  getAllCategories(){
-        this.dataApi.getAllCategories().subscribe((res:any) => {
-      if (res[0] === undefined){
-       }else{
-        this.categories=res;            
-        }
-     });  
-    }
+ 
      getAllTixs(){
         this.dataApi.getAllTixs().subscribe((res:any) => {
       if (res[0] === undefined){

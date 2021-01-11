@@ -1,4 +1,4 @@
-<div id="footer-bar" class="footer-bar-6"  [hidden]="this._uw.routeLogin">
+<!-- <div id="footer-bar" class="footer-bar-6"  [hidden]="this._uw.routeLogin">
 	<a routerLink="products" class="active-nav" [hidden]="!this._uw.routeProducts"><i class="fa fa-shopping-basket"></i><span>Productos</span></a>
 	<a routerLink="products"  [hidden]="this._uw.routeProducts"><i class="fa fa-shopping-basket"></i><span>Productos</span></a>
 	
@@ -14,4 +14,22 @@
 	
 	<a routerLink="account"data-menu="menu-main"  class="active-nav"   [hidden]="!this._uw.routeAccount"><i class="fa fa-user"></i><span>Cuenta</span></a>
 	<a routerLink="account"data-menu="menu-main"  [hidden]="this._uw.routeAccount"><i class="fa fa-user"></i><span>Cuenta</span></a>
+</div> -->
+
+<div id="footer-bar" class="footer-bar-6"  [hidden]="this._uw.routeLogin">
+	<!-- <a routerLink="products" class="active-nav" [hidden]="!this._uw.routeProducts"><i class="fa fa-shopping-basket"></i><span>Productos</span></a>
+	<a routerLink="products"  [hidden]="this._uw.routeProducts"><i class="fa fa-shopping-basket"></i><span>Productos</span></a> -->
+	
+	<a routerLink="blog" class="active-nav"  [hidden]="!this._uw.routeBlog"><i class="fa fa-comment"></i><span>Blog</span></a>
+	<a routerLink="blog"  [hidden]="this._uw.routeBlog"><i class="fa fa-comment"></i><span>Blog</span></a>
+
+	<a routerLink="products" class="circle-nav active-nav"  [hidden]="!this._uw.routeProducts"><i class="fa fa-shopping-basket"></i><span>Productos</span></a>
+	<a routerLink="products" class="circle-nav"  [hidden]="this._uw.routeProducts"><i class="fa fa-shopping-basket"></i><span>Productos</span></a>
+
+	
+	<a routerLink="orders"  class="active-nav"  [hidden]="!this._uw.routeOrders"><i class="fa fa-shopping-cart"></i><span>Pedidos</span></a>
+	<a routerLink="orders" [hidden]="this._uw.routeOrders"><i class="fa fa-shopping-cart"></i><span>Pedidos</span></a>
+	
+	<!-- <a routerLink="account"data-menu="menu-main"  class="active-nav"   [hidden]="!this._uw.routeAccount"><i class="fa fa-user"></i><span>Cuenta</span></a>
+	<a routerLink="account"data-menu="menu-main"  [hidden]="this._uw.routeAccount"><i class="fa fa-user"></i><span>Cuenta</span></a> -->
 </div>

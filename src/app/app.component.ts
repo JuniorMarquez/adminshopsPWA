@@ -9,8 +9,6 @@ import { Location } from '@angular/common';
 import { Router } from '@angular/router';
 import { SwUpdate } from '@angular/service-worker';
 	
-
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -30,7 +28,6 @@ export class AppComponent {
 
  }
      ngOnInit() {
-
       if (this.swUpdate.isEnabled) {
             this.swUpdate.available.subscribe(() => {
                 if(confirm("Adminshops tiene nuevas mejoras. desea cargar esta nueva versión?")) {
@@ -38,13 +35,6 @@ export class AppComponent {
                 }
             });
         }    
-
-
-  	 // if (this._uw.loaded==true){
-    //       this.loadAPI = new Promise(resolve => {
-    //         this.loadScript();
-    //       });
-    //     }
-    //     this._uw.loaded=true;
   }
+
 }
