@@ -7,21 +7,23 @@ import {
 	BlogComponent,
 	HomeComponent,
 	OrdersComponent,
-	AccountComponent
+	AccountComponent,
+	LoginComponent
 	}from "./components/index.paginas";
 
 	import { AuthGuard } from './guards/auth.guard';
 
 const app_routes: Routes = [
-	{path:'',component:HomeComponent},
+	{path:'',component:LoginComponent},
 	{path:'topbar',component:TopbarComponent},
 	{path:'slider',component:SliderComponent},
-	{path:'products',component:ProductsComponent},
+	{path:'products',component:ProductsComponent , canActivate:[AuthGuard]},
 	{path:'footer',component:FooterComponent},
-	{path:'blog',component:BlogComponent},
-	{path:'home',component:HomeComponent},
-	{path:'orders',component:OrdersComponent},
-	{path:'account',component:AccountComponent},
+	{path:'blog',component:BlogComponent, canActivate:[AuthGuard]},
+	{path:'home',component:HomeComponent, canActivate:[AuthGuard]},
+	{path:'orders',component:OrdersComponent, canActivate:[AuthGuard]},
+	{path:'account',component:AccountComponent, canActivate:[AuthGuard]},
+	{path:'login',component:LoginComponent},
 
 	{path:'**',pathMatch:'full',redirectTo:''}
 	];

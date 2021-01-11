@@ -6,4 +6,5 @@ export { BlogComponent } from "./blog/blog.component";
 export { HomeComponent } from "./home/home.component";
 export { OrdersComponent } from "./orders/orders.component";
 export { AccountComponent } from "./account/account.component";
+export { LoginComponent } from "./login/login.component";
 

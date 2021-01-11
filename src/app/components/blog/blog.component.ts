@@ -33,6 +33,7 @@ export class BlogComponent implements OnInit {
     this._uw.routeHome=false;
     this._uw.routeAccount=false;
     this._uw.routeBlog=true;
+    this._uw.routeLogin=false;
     this.getAllPosts();
   		if (this._uw.loaded==true){
           this.loadAPI = new Promise(resolve => {

@@ -34,6 +34,7 @@ export class OrdersComponent implements OnInit {
     this._uw.routeHome=false;
     this._uw.routeAccount=false;
     this._uw.routeBlog=false;
+    this._uw.routeLogin=false;
          this.getOrders();
      this.getOrdersTamano();
   		if (this._uw.loaded==true){

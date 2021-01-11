@@ -27,6 +27,7 @@ export class HomeComponent implements OnInit {
     this._uw.routeHome=true;
     this._uw.routeAccount=false;
     this._uw.routeBlog=false;
+    this._uw.routeLogin=false;
 		if (this._uw.loaded==true){
           this.loadAPI = new Promise(resolve => {
             this.loadScript();

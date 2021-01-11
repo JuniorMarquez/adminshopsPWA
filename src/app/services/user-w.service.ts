@@ -9,6 +9,7 @@ export class UserWService {
 	routeProducts:boolean=false;
 	routeAccount:boolean=false;
 	routeBlog:boolean=false;
+	routeLogin:boolean=false;
 	admin:boolean;
 	adminName:string;
 	affiliate:boolean;

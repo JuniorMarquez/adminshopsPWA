@@ -19,6 +19,7 @@ export class AccountComponent implements OnInit {
     this._uw.routeHome=false;
     this._uw.routeAccount=true;
     this._uw.routeBlog=false;
+    this._uw.routeLogin=false;
   }
 
 }

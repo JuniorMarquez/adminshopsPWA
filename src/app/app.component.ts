@@ -4,6 +4,10 @@ import { IpbucketService } from "./services/ipbucket.service";
 import { DataApiService } from "./services/data-api.service";
 import { ProductInfoService } from "./services/product-info.service";
 import { UserWService } from "./services/user-w.service";
+import { ActivatedRoute, Params} from '@angular/router';
+import { Location } from '@angular/common';
+import { Router } from '@angular/router';
+	
 
 
 @Component({
@@ -17,7 +21,10 @@ export class AppComponent {
  	public _uw:UserWService,
  	public _pi:ProductInfoService, 
  	public ipbucket:IpbucketService, 
- 	public dataApi:DataApiService){
+ 	public dataApi:DataApiService,
+ 	private route:ActivatedRoute,
+	private location: Location,
+	){
 
  }
 }

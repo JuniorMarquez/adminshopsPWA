@@ -27,6 +27,8 @@ import {IpbucketService} from './services/ipbucket.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 //MATERIAL
 //import { MaterialModule } from './material';
+import { ConfirmEqualValidatorDirective } from './confirm-equal-validator.directive';
+
 import {MatButtonModule, MatCheckboxModule,MatTabsModule } from '@angular/material';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatIconModule} from '@angular/material/icon';
@@ -51,6 +53,7 @@ import { BlogComponent } from './components/blog/blog.component';
 import { HomeComponent } from './components/home/home.component';
 import { OrdersComponent } from './components/orders/orders.component';
 import { AccountComponent } from './components/account/account.component';
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
   declarations: [
@@ -63,6 +66,8 @@ import { AccountComponent } from './components/account/account.component';
     HomeComponent,
     OrdersComponent,
     AccountComponent,
+    LoginComponent,
+    ConfirmEqualValidatorDirective,
 
   ],
   imports: [

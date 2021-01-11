@@ -35,6 +35,7 @@ export class ProductsComponent implements OnInit {
     this._uw.routeHome=false;
     this._uw.routeAccount=false;
     this._uw.routeBlog=false;
+    this._uw.routeLogin=false;
 
 
 
@@ -57,9 +58,13 @@ public filter(catego: string){
         if (res[0] === undefined){
           }
         else{
-          this.tixs=res;            
+          this.tixs=res; 
+          this._uw.selectedQuan=res.length;               
         }
-      }); 
+      });
+      this.loadScript();
+      this.loadScript2();
+      this.loadScript3(); 
     }
 
 
@@ -81,8 +86,6 @@ public saveEditing(){
     this._uw.tixPreview=tixToView;
     this._uw.tixPreview.quantity=1; 
     this._uw.imagePreviewProduct=this._uw.tixPreview.images[0];
-    // this.getAllTixs();
-    console.log("running");
   } 
 
 
@@ -90,7 +93,6 @@ public saveEditing(){
   getAllCategories(){
         this.dataApi.getAllCategories().subscribe((res:any) => {
       if (res[0] === undefined){
-        console.log("no");
        }else{
         this.categories=res;            
         }
@@ -99,9 +101,9 @@ public saveEditing(){
      getAllTixs(){
         this.dataApi.getAllTixs().subscribe((res:any) => {
       if (res[0] === undefined){
-        console.log("no");
        }else{
-        this.tixs=res;            
+        this.tixs=res;   
+        this._uw.selectedQuan=res.length;         
         }
      });  
     }

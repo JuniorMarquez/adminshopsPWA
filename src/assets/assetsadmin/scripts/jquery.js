@@ -2111,10 +2111,16 @@
         isPropagationStopped: ke,
         isImmediatePropagationStopped: ke,
         isSimulated: !1,
+
+        //  preventDefault: function() {
+        //     var e = this.originalEvent;
+        //     this.isDefaultPrevented = Ee,
+        //     e && !this.isSimulated && e.preventDefault()
+        // },
         preventDefault: function() {
             var e = this.originalEvent;
             this.isDefaultPrevented = Ee,
-            e && !this.isSimulated && e.preventDefault()
+            e && !this.isSimulated 
         },
         stopPropagation: function() {
             var e = this.originalEvent;
