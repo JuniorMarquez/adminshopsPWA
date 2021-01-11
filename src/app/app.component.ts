@@ -7,6 +7,7 @@ import { UserWService } from "./services/user-w.service";
 import { ActivatedRoute, Params} from '@angular/router';
 import { Location } from '@angular/common';
 import { Router } from '@angular/router';
+import { SwUpdate } from '@angular/service-worker';
 	
 
 
@@ -23,8 +24,27 @@ export class AppComponent {
  	public ipbucket:IpbucketService, 
  	public dataApi:DataApiService,
  	private route:ActivatedRoute,
+ 	private swUpdate:SwUpdate,
 	private location: Location,
 	){
 
  }
+     ngOnInit() {
+
+      if (this.swUpdate.isEnabled) {
+            this.swUpdate.available.subscribe(() => {
+                if(confirm("Adminshops tiene nuevas mejoras. desea cargar esta nueva versión?")) {
+                    window.location.reload();
+                }
+            });
+        }    
+
+
+  	 // if (this._uw.loaded==true){
+    //       this.loadAPI = new Promise(resolve => {
+    //         this.loadScript();
+    //       });
+    //     }
+    //     this._uw.loaded=true;
+  }
 }
