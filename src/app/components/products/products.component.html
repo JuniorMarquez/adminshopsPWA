@@ -12,7 +12,20 @@
 				<div class="divider divider-margins"></div>
 
 				<div class="row text-center mb-0">
-					<div class="col-6 mb-4" *ngFor="let tix of tixs" data-menu="menu-item-sheet"  (click)="viewProduct(tix)">
+					<div class="col-6 mb-4" *ngFor="let tix of tixs" data-menu="menu-item-sheet"  [hidden]="tix.category!=this._uw.categorySelected">
+						<a ><img src="{{tix.images[0]}}" class="rounded-sm shadow-xl img-fluid"  (click)="viewProduct(tix)"></a>
+					
+						
+						<a >
+						<h5 class="mt-1">{{tix.productName}}</h5>
+					
+						</a>
+						<h1 class="mt-1 mb-n2 font-800">${{tix.globalPrice}}
+							
+						</h1>
+
+					</div>
+					<div class="col-6 mb-4" *ngFor="let tix of tixs" data-menu="menu-item-sheet"  (click)="viewProduct(tix)" [hidden]="!this.all">
 						<a ><img src="{{tix.images[0]}}" class="rounded-sm shadow-xl img-fluid"></a>
 					
 						

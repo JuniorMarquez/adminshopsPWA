@@ -22,6 +22,7 @@ export class UserWService {
 	car:any[]=[];
 	card:any={};
 	cardsResult:any[]=[];
+	categories:any={};
 	categorySelected:string;
 	editingTrek:boolean=false;
 	errorFormAffiliate:boolean;

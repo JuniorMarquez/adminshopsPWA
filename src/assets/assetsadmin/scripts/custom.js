@@ -259,7 +259,7 @@ $(window)['on']('load', function() {
                             autoplayTimeout: 4e3
                         }),
                         $('.story-slider')['owlCarousel']({
-                            loop: !0,
+                            loop: !1,
                             margin: 20,
                             nav: !1,
                             stagePadding: 30,

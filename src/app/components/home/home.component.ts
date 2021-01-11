@@ -3,6 +3,7 @@ import { ActivatedRoute, Params} from '@angular/router';
 import { Location } from '@angular/common';
 import { Router } from '@angular/router';
 import { UserWService } from "../../services/user-w.service";
+import { DataApiService } from '../../services/data-api.service';
 
 @Component({
   selector: 'app-home',
@@ -14,6 +15,7 @@ export class HomeComponent implements OnInit {
   constructor(
 	private route:ActivatedRoute,
 	private location: Location,
+    private dataApi: DataApiService,
     public _uw:UserWService
   	) { }
     loadAPI = null;
@@ -36,7 +38,20 @@ export class HomeComponent implements OnInit {
           });
         }
       this._uw.loaded=true;
+      this.getAllCategories();
   }
+
+
+
+    getAllCategories(){
+        this.dataApi.getAllCategories().subscribe((res:any) => {
+      if (res[0] === undefined){
+       }else{
+        this._uw.categories=res;            
+        }
+     });  
+    }
+
     public loadScript() {
       let node = document.createElement("script");
       node.src = this.url;

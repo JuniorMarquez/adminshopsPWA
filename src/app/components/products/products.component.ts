@@ -24,12 +24,14 @@ export class ProductsComponent implements OnInit {
     public tixs:TixInterface;
     public editingPrice=false;
      public editingDescription=false;
+     public all = true;
     loadAPI = null;
     url = "assets/assetsadmin/scripts/jquery.js";
     url2 = "assets/assetsadmin/scripts/bootstrap.min.js";
     url3 = "assets/assetsadmin/scripts/custom.js";
   
   ngOnInit() {
+    this._uw.categorySelected="all";
     this._uw.routeProducts=true;
     this._uw.routeOrders=false;
     this._uw.routeHome=false;
@@ -38,8 +40,7 @@ export class ProductsComponent implements OnInit {
     this._uw.routeLogin=false;
 
 
-
-      this.getAllCategories();
+         this.setCategories();
             this.getAllTixs();
 	if (this._uw.loaded==true){
           this.loadAPI = new Promise(resolve => {
@@ -50,21 +51,20 @@ export class ProductsComponent implements OnInit {
         }
       this._uw.loaded=true;
   }
+  public setCategories(){
+
+    this.categories=this._uw.categories;
+  }
+
+
 
 public filter(catego: string){
+
   this._uw.categorySelected=catego;
       let categ = catego; 
-      this.dataApi.getTixsFilter(categ).subscribe((res:any) => {
-        if (res[0] === undefined){
-          }
-        else{
-          this.tixs=res; 
-          this._uw.selectedQuan=res.length;               
-        }
-      });
-      this.loadScript();
-      this.loadScript2();
-      this.loadScript3(); 
+      this.all=false;
+
+     
     }
 
 

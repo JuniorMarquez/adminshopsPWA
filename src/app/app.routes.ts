@@ -14,15 +14,16 @@ import {
 	import { AuthGuard } from './guards/auth.guard';
 
 const app_routes: Routes = [
-	{path:'',component:LoginComponent},
+	{path:'',component:HomeComponent},
 	{path:'topbar',component:TopbarComponent},
 	{path:'slider',component:SliderComponent},
-	{path:'products',component:ProductsComponent , canActivate:[AuthGuard]},
+	// {path:'products',component:ProductsComponent , canActivate:[AuthGuard]},
+	{path:'products',component:ProductsComponent },
 	{path:'footer',component:FooterComponent},
-	{path:'blog',component:BlogComponent, canActivate:[AuthGuard]},
-	{path:'home',component:HomeComponent, canActivate:[AuthGuard]},
-	{path:'orders',component:OrdersComponent, canActivate:[AuthGuard]},
-	{path:'account',component:AccountComponent, canActivate:[AuthGuard]},
+	{path:'blog',component:BlogComponent},
+	{path:'home',component:HomeComponent},
+	{path:'orders',component:OrdersComponent},
+	{path:'account',component:AccountComponent},
 	{path:'login',component:LoginComponent},
 
 	{path:'**',pathMatch:'full',redirectTo:''}
