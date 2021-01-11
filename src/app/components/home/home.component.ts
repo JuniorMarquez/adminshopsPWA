@@ -4,6 +4,9 @@ import { Location } from '@angular/common';
 import { Router } from '@angular/router';
 import { UserWService } from "../../services/user-w.service";
 import { DataApiService } from '../../services/data-api.service';
+import { PostInterface } from '../../models/post-interface'; 
+import { OrderInterface } from '../../models/order-interface';
+
 
 @Component({
   selector: 'app-home',
@@ -22,7 +25,11 @@ export class HomeComponent implements OnInit {
     url = "assets/assetsadmin/scripts/jquery.js";
     url2 = "assets/assetsadmin/scripts/bootstrap.min.js";
     url3 = "assets/assetsadmin/scripts/custom.js";
-
+  public posts:PostInterface;
+  public postSize=0;
+    public orders:OrderInterface;
+  public order:OrderInterface;
+  public ordersSize=0;
   ngOnInit() {
     this._uw.routeProducts=false;
     this._uw.routeOrders=false;
@@ -39,15 +46,45 @@ export class HomeComponent implements OnInit {
         }
       this._uw.loaded=true;
       this.getAllCategories();
+         this.getAllPosts();
+         this.getOrders();
+         this.getOrdersTamano();
+
   }
+getOrdersTamano(){
+         this.dataApi
+         .getOrders()
+         .subscribe((res:any) => {
+      if (res[0] === undefined){
+        return
+        }else{
+          this.orders=res;
+         this._uw.tamano = res.length;
+        }
+      });
+    }
 
-
-
+  getOrders(){
+        this.dataApi
+        .getOrders()
+        .subscribe((orders: OrderInterface) => (this.orders=orders));
+    }
     getAllCategories(){
         this.dataApi.getAllCategories().subscribe((res:any) => {
       if (res[0] === undefined){
        }else{
-        this._uw.categories=res;            
+        this._uw.categories=res;  
+        this._uw.selectedQuan=res.length;          
+        }
+     });  
+    }
+    getAllPosts(){
+        this.dataApi.getAllPosts().subscribe((res:any) => {
+      if (res[0] === undefined){
+        console.log("no");
+       }else{
+        this.posts=res;    
+        this.postSize=res.length;        
         }
      });  
     }
