@@ -2,14 +2,14 @@
 	<div class="page-content">
 		<div class="card card-style">
 			<div class="content mb-0">
-				<a href="#" class="d-flex" *ngFor="let post of posts">
-				<div class="mr-auto">
-					<h5 class="font-600 pt-2">{{post.tittle}}</h5>
-					<span class="color-highlight opacity-60">{{post.status}}</span>
-				</div>
-				<div class="ml-4 mb-4">
-					<img src="{{post.images[0]}}" class="rounded-sm" width="100">
-				</div>
+				<a  class="d-flex" *ngFor="let post of posts">
+					<div class="mr-auto">
+						<h5 class="font-600 pt-2">{{post.tittle}}</h5>
+						<span class="color-highlight opacity-60">{{post.status}}</span>
+					</div>
+					<div class="ml-4 mb-4">
+						<img src="{{post.images[0]}}" class="rounded-sm" width="100">
+					</div>
 				</a>
 			</div>
 		</div>
