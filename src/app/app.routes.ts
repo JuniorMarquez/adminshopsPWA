@@ -8,7 +8,9 @@ import {
 	HomeComponent,
 	OrdersComponent,
 	AccountComponent,
-	LoginComponent
+	LoginComponent,
+	ViewProductComponent,
+	NewProductComponent
 	}from "./components/index.paginas";
 
 	import { AuthGuard } from './guards/auth.guard';
@@ -25,7 +27,8 @@ const app_routes: Routes = [
 	{path:'orders',component:OrdersComponent},
 	{path:'account',component:AccountComponent},
 	{path:'login',component:LoginComponent},
-
+	{path:'viewproduct', component:ViewProductComponent},
+	{path:'newproduct', component:NewProductComponent},
 	{path:'**',pathMatch:'full',redirectTo:''}
 	];
 	export const app_routing = RouterModule.forRoot(app_routes);

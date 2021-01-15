@@ -1,0 +1,94 @@
+<div id="article-1" class="menu menu-box-top menu-box-bottom-full rounded-0 " data-menu-height="100%" style="display: block; height: 100%;">
+	<form  class=""[formGroup]="ngFormAddtixs" (ngSubmit) ="sendTix()" >
+		<div class="" style="margin-top: 100px;z-index:1;">
+			<div clfhrass="content">
+				<div class="card-top pt-4 pl-3 pr-3">
+					<a  class="close-menu icon icon-s rounded-l bg-theme color-theme "><i class="fa fa-arrow-up"></i></a>
+					
+				</div>
+				<!-- <h1>Agregar producto</h1> -->
+				<!-- <div class="list-group list-custom-large mb-4">
+					<a data-trigger-switch="switch-1" data-menu="menu-heart" class="border-0" >
+					<article id="image">
+						<div class="relative"><span class="fa-fw select-all fas"></span></div>
+					</article>
+					<span>Imagenes</span>
+					<div class="custom-control scale-switch ios-switch">
+						<input type="checkbox" class="ios-input" id="switch-1">
+						<label class="custom-control-label" for="switch-1"></label>
+					</div>
+					<i class="fa fa-angle-right"></i>
+					</a>
+				</div> -->
+				<div class="card card-style">
+					<div class="content mb-0">
+						<ngx-file-picker
+						    [uploadType]="'multi'"
+						    (validationError)= "onValidationError($event)"
+						    [adapter]="adapter"
+						    [fileExtensions]="['pdf', 'jpeg','jpg', 'png', 'PNG', 'mp4', 'css', 'docx', 'txt','webp']"
+						    (uploadSuccess)="onUploadSuccess($event)"
+						    (removeSuccess)="onRemoveSuccess($event)"
+						    [showeDragDropZone]="true"
+						    [showPreviewContainer]="true"
+						    [accept]="'image/*'"
+						    (fileAdded)="onFileAdded($event)">
+						</ngx-file-picker>
+						<!-- <h4 class="bolder">Minimalist Fields</h4>
+						<p>
+						These boxes will react to them when you type or select a value.
+						</p> -->
+						<div class="input-style input-style-1 input-required">
+							<!-- <i class="input-icon fa fa-shopping-basket"></i> -->
+							<span class="color-highlight">Nombre del productos</span>
+							<em>(required)</em>
+							<!-- <input type="name" placeholder="Nombre del producto">		 -->
+							<input type="text" class="form-control" id="productName" formControlName="productName" placeholder="Nombre del producto" [(ngModel)]="tix.productName"
+							>
+						</div>
+
+						
+
+
+
+						<div class="input-style input-style-1 input-required">
+							<span class="color-highlight">Descripción</span>
+							<em>(required)</em>
+							<!-- <textarea placeholder="Descripcion"></textarea> -->
+
+							<textarea class="form-control height-80" id="description" formControlName="description" placeholder="Descripción" [(ngModel)]="tix.description"></textarea>
+							
+
+
+
+
+						</div>
+						
+						<div class="input-style input-style-1 input-required">
+							<span class="color-highlight">Categoria</span>
+							<em><i class="fa fa-angle-down"></i></em>
+								<select    id="category" formControlName="category" [(ngModel)]="tix.category"
+								 (click)="setType()" class="nice-select" >
+									<option *ngFor="let category of categories" >{{category.tittle}}</option>
+									
+							</select>
+													
+						</div>
+
+						<div class="input-style input-style-1 input-required">
+							<span class="color-highlight">Color</span>
+							<em>(required)</em>
+							<input type="text" class="form-control" id="color" formControlName="color" placeholder="Color" [(ngModel)]="tix.color"
+							>
+							
+						</div>			
+		
+					</div>
+				</div>
+				<div class="divider"></div>
+			</div>
+		</div>
+		<a (click)="sendTix()" class="close-menu btn btn-l rounded-sm font-600 btn-full btn-margins gradient-green">Ok</a>
+		   <!-- <button type="button" (click)="sendTix()">Guardar</button> -->
+	</form>
+</div>

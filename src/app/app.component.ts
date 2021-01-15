@@ -23,7 +23,7 @@ export class AppComponent {
  	public dataApi:DataApiService,
  	private route:ActivatedRoute,
  	private swUpdate:SwUpdate,
-	private location: Location,
+	private location: Location
 	){
 
  }
