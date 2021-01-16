@@ -65,7 +65,7 @@
 						</div>
 						
 						<div class="input-style input-style-1 input-required">
-							<span class="color-highlight">Categoria</span>
+							<!-- <span class="color-highlight">Categoria</span> -->
 							<em><i class="fa fa-angle-down"></i></em>
 								<select    id="category" formControlName="category" [(ngModel)]="tix.category"
 								 >
@@ -81,7 +81,15 @@
 							<input type="text" class="form-control" id="color" formControlName="color" placeholder="Color" [(ngModel)]="tix.color"
 							>
 							
-						</div>			
+						</div>	
+
+						<div class="input-style input-style-1 input-required">
+							<span class="color-highlight">Precio</span>
+							<em>(required)</em>
+							<input type="number" class="form-control" id="precio" formControlName="precio" placeholder="Precio" [(ngModel)]="tix.globalPrice"
+							>
+							
+						</div>		
 		
 					</div>
 				</div>
