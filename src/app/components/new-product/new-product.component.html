@@ -68,7 +68,7 @@
 							<span class="color-highlight">Categoria</span>
 							<em><i class="fa fa-angle-down"></i></em>
 								<select    id="category" formControlName="category" [(ngModel)]="tix.category"
-								 (click)="setType()" class="nice-select" >
+								class="nice-select" >
 									<option *ngFor="let category of categories" >{{category.tittle}}</option>
 									
 							</select>

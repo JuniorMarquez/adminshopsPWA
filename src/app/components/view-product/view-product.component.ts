@@ -33,7 +33,8 @@ ngFormAddtixs: FormGroup;
   private router: Router,
   private  http: HttpClient
   	) { }
-    
+     public editingPrice=false;
+     public editingDescription=false;
     public tixs:TixInterface;
     loadAPI = null;
     url = "assets/assetsadmin/scripts/jquery.js";
