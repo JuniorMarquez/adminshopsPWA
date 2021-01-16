@@ -51,6 +51,19 @@ ngFormAddtixs: FormGroup;
         }
       this._uw.loaded=true;
   }
+
+
+public editPrice(){
+  this.editingPrice=true;
+}
+public editDescription(){
+  this.editingDescription=true;
+}
+public saveEditing(){
+  this.editingPrice=false;
+  this.editingDescription=false;
+}
+
   public loadScript() {
       let node = document.createElement("script");
       node.src = this.url;
