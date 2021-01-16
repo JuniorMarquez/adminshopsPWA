@@ -36,6 +36,7 @@ ngFormAddtixs: FormGroup;
      public editingPrice=false;
      public editingDescription=false;
       public editingColor=false;
+      public editingTalla=false;
     public tixs:TixInterface;
     loadAPI = null;
     url = "assets/assetsadmin/scripts/jquery.js";
@@ -57,6 +58,9 @@ ngFormAddtixs: FormGroup;
 public editPrice(){
   this.editingPrice=true;
 }
+public editTalla(){
+  this.editingTalla=true;
+}
 public editColor(){
   this.editingColor=true;
 }
@@ -67,6 +71,7 @@ public saveEditing(){
   this.editingPrice=false;
   this.editingDescription=false;
   this.editingColor=false;
+  this.editingTalla=false;
 }
 
   public loadScript() {

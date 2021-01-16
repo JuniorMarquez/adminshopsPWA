@@ -42,6 +42,12 @@
 					<input class="form-control" type="number" placeholder="{{this._uw.tixPreview.color}}" value="{{this._uw.tixPreview.color}}"  [hidden]="!this.editingColor">
 				</div>
 
+				<h6 class="font-500 font-14 pb-2"  (click)="editTalla()" [hidden]="this.editingTalla">{{this._uw.tixPreview.talla}}</h6>
+				<div class="input-style input-style-2">
+					<span class="input-style-1-active color-highlight" [hidden]="!this.editingTalla">Talla</span>
+					<input class="form-control" type="number" placeholder="{{this._uw.tixPreview.talla}}" value="{{this._uw.tixPreview.talla}}"  [hidden]="!this.editingTalla">
+				</div>
+
 
 				<h4 (click)="editPrice()" [hidden]="this.editingPrice">${{this._uw.tixPreview.globalPrice}}</h4>
 				<span class="input-style-1-active color-highlight"  [hidden]="!this.editingPrice">Precio ($USD)</span>
