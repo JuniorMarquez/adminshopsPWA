@@ -1,5 +1,5 @@
 <div id="article-1" class="menu menu-box-top menu-box-bottom-full rounded-0 " data-menu-height="100%" style="display: block; height: 100%;">
-	<form  class=""[formGroup]="ngFormAddtixs" (ngSubmit) ="sendTix()" >
+	<!-- <form  class=""[formGroup]="ngFormAddtixs" (ngSubmit) ="sendTix()" > -->
 		<div class="" style="margin-top: 100px;z-index:1;">
 			<div clfhrass="content">
 				<div class="card-top pt-4 pl-3 pr-3">
@@ -34,63 +34,64 @@
 						    [accept]="'image/*'"
 						    (fileAdded)="onFileAdded($event)">
 						</ngx-file-picker>
-						<!-- <h4 class="bolder">Minimalist Fields</h4>
-						<p>
-						These boxes will react to them when you type or select a value.
-						</p> -->
-						<div class="input-style input-style-1 input-required">
-							<!-- <i class="input-icon fa fa-shopping-basket"></i> -->
-							<span class="color-highlight">Nombre del productos</span>
-							<em>(required)</em>
-							<!-- <input type="name" placeholder="Nombre del producto">		 -->
-							<input type="text" class="form-control" id="productName" formControlName="productName" placeholder="Nombre del producto" [(ngModel)]="tix.productName"
-							>
-						</div>
+						<form  class=""[formGroup]="ngFormAddtixs" (ngSubmit) ="sendTix()" >
+							<!-- <h4 class="bolder">Minimalist Fields</h4>
+							<p>
+							These boxes will react to them when you type or select a value.
+							</p> -->
+							<div class="input-style input-style-1 input-required">
+								<!-- <i class="input-icon fa fa-shopping-basket"></i> -->
+								<span class="color-highlight">Nombre del productos</span>
+								<em>(required)</em>
+								<!-- <input type="name" placeholder="Nombre del producto">		 -->
+								<input type="text" class="form-control" id="productName" formControlName="productName" placeholder="Nombre del producto" [(ngModel)]="tix.productName"
+								>
+							</div>
 
-						
-
-
-
-						<div class="input-style input-style-1 input-required">
-							<span class="color-highlight">Descripción</span>
-							<em>(required)</em>
-							<!-- <textarea placeholder="Descripcion"></textarea> -->
-
-							<textarea class="form-control height-80" id="description" formControlName="description" placeholder="Descripción" [(ngModel)]="tix.description"></textarea>
 							
 
 
 
+							<div class="input-style input-style-1 input-required">
+								<span class="color-highlight">Descripción</span>
+								<em>(required)</em>
+								<!-- <textarea placeholder="Descripcion"></textarea> -->
 
-						</div>
-						
-						<div class="input-style input-style-1 input-required">
-							<!-- <span class="color-highlight">Categoria</span> -->
-							<em><i class="fa fa-angle-down"></i></em>
-								<select    id="category" formControlName="category" [(ngModel)]="tix.category"
-								 >
-									<option *ngFor="let category of categories" >{{category.tittle}}</option>
-									
-							</select>
-													
-						</div>
+								<textarea class="form-control height-80" id="description" formControlName="description" placeholder="Descripción" [(ngModel)]="tix.description"></textarea>
+								
 
-						<div class="input-style input-style-1 input-required">
-							<span class="color-highlight">Color</span>
-							<em>(required)</em>
-							<input type="text" class="form-control" id="color" formControlName="color" placeholder="Color" [(ngModel)]="tix.color"
-							>
+
+
+
+							</div>
 							
-						</div>	
+							<div class="input-style input-style-1 input-required">
+								<span class="color-highlight">Categoria</span>
+								<em><i class="fa fa-angle-down"></i></em>
+									<select    id="category" formControlName="category" [(ngModel)]="tix.category"
+									 >
+										<option *ngFor="let category of _uw.categories" >{{category.tittle}}</option>
+										
+								</select>
+														
+							</div>
 
-						<div class="input-style input-style-1 input-required">
-							<span class="color-highlight">Precio</span>
-							<em>(required)</em>
-							<input type="number" class="form-control" id="precio" formControlName="precio" placeholder="Precio" [(ngModel)]="tix.globalPrice"
-							>
-							
-						</div>		
-		
+							<div class="input-style input-style-1 input-required">
+								<span class="color-highlight">Color</span>
+								<em>(required)</em>
+								<input type="text" class="form-control" id="color" formControlName="color" placeholder="Color" [(ngModel)]="tix.color"
+								>
+								
+							</div>	
+
+							<div class="input-style input-style-1 input-required">
+								<span class="color-highlight">Precio</span>
+								<em>(required)</em>
+								<input type="number" class="form-control" id="precio" formControlName="globalPrice" placeholder="Precio" [(ngModel)]="tix.globalPrice"
+								>
+								
+							</div>		
+						</form>	
 					</div>
 				</div>
 				<div class="divider"></div>
@@ -98,5 +99,5 @@
 		</div>
 		<a (click)="sendTix()" class="close-menu btn btn-l rounded-sm font-600 btn-full btn-margins gradient-green">Ok</a>
 		   <!-- <button type="button" (click)="sendTix()">Guardar</button> -->
-	</form>
+	
 </div>

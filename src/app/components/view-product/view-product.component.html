@@ -1,4 +1,4 @@
-<!-- PRODUCT DETAIL -->
+<!-- PRODUCT DETAIL --> 
 
 <div id="menu-item-sheet" class="menu menu-box-bottom rounded-m bg-theme" data-menu-height="390">
 	<div class="menu-title">
@@ -34,6 +34,21 @@
 				<div class="input-style input-style-2">
 					<span class="input-style-1-active color-highlight" [hidden]="!this.editingDescription">Descripción</span>
 					<input class="form-control" type="number" placeholder="{{this._uw.tixPreview.description}}" value="{{this._uw.tixPreview.description}}"  [hidden]="!this.editingDescription">
+				</div>
+				<h6 class="font-500 font-14 pb-2"  (click)="editCategory()" [hidden]="this.editingCategory">{{this._uw.tixPreview.category}}</h6>
+				<div class="input-style input-style-1 input-required" [hidden]="!this.editingCategory">
+					<span class="color-highlight">Categoria</span>
+					<em><i class="fa fa-angle-down"></i></em>
+						<select    id="category" 
+						 >
+							<option *ngFor="let category of _uw.categories" >{{category.tittle}}</option>
+							
+					</select>	
+				</div>
+
+				<div class="input-style input-style-2">
+					<span class="input-style-1-active color-highlight" [hidden]="!this.editingColor">Categoria</span>
+					<input class="form-control" type="number" placeholder="{{this._uw.tixPreview.color}}" value="{{this._uw.tixPreview.color}}"  [hidden]="!this.editingColor">
 				</div>
 
 				<h6 class="font-500 font-14 pb-2"  (click)="editColor()" [hidden]="this.editingColor">{{this._uw.tixPreview.color}}</h6>

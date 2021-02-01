@@ -74,10 +74,10 @@ ngFormAddtixs: FormGroup;
 
   sendTix(){
       this.submitted = true;
-      // if (this.ngFormAddtixs.invalid) {
-      //   this._uw.errorFormAddtixs=true;
-      // return;
-      //   } 
+      if (this.ngFormAddtixs.invalid) {
+        this._uw.errorFormAddtixs=true;
+      return;
+        } 
       this._uw.errorFormAddtixs=false;
       this.tix = this.ngFormAddtixs.value;
       this.tix.status="activated";
