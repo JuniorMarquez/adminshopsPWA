@@ -26,6 +26,7 @@ export class UserWService {
 	categorySelected:string;
 	editingTrek:boolean=false;
 	errorFormAffiliate:boolean;
+	errorFormAddpost:boolean;
 	errorFormAddtixs:boolean;
 	errorFormPartner:boolean;
 	file:any[]=[];

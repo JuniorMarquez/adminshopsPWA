@@ -1,83 +1,89 @@
 <!-- PRODUCT DETAIL --> 
 
-<div id="menu-item-sheet" class="menu menu-box-bottom rounded-m bg-theme" data-menu-height="390">
-	<div class="menu-title">
-		<h1 class="font-22 font-800">{{this._uw.tixPreview.productName}}</h1>
-		<!-- <a  class="close-menu"><i class="fa fa-times-circle"></i></a> -->
-			<a  class="close-menu">
-				<article id="chevron-down">
-					<div class="relative"><span class="fa-fw select-all fas" style="color: black;"></span></div>
-				</article>
-			</a>
+<div id="menu-item-sheet" class="menu menu-box-bottom rounded-m bg-theme" data-menu-height="490">
+	<form  class="form" [formGroup]="formEdit" (ngSubmit) ="sendTix(this._uw.tixPreview.id)" >	
+		<div class="menu-title">
+			<h1 class="font-22 font-800">{{this._uw.tixPreview.productName}} </h1>
+			<!-- <a  class="close-menu"><i class="fa fa-times-circle"></i></a> -->
+				<a  class="close-menu">
+					<article id="chevron-down">
+						<div class="relative"><span class="fa-fw select-all fas" style="color: black;"></span></div>
+					</article>
+				</a>
 
 
 
-	</div>
-	<div class="content">
-		<div class="divider mt-n2"></div>
-		<div class="d-flex">		
-			<div class="ml-auto mr-4 pr-2">
-				<div class="custom-control android-switch highlight-switch">
-					<input type="checkbox" class="ios-input" id="toggle-id-1">
-					<label class="custom-control-label" for="toggle-id-1"></label>
-				</div>
-			</div>
 		</div>
-		<div class="d-flex mb-4">
-			<div>
-				<img src="{{this._uw.imagePreviewProduct}}" class="rounded-sm" width="80">
+		<div class="content">
+			<div class="divider mt-n2"></div>
+			<div class="d-flex">		
+				<div class="ml-auto mr-4 pr-2">
+					<div class="custom-control android-switch highlight-switch">
+						<input type="checkbox" class="ios-input" id="toggle-id-1">
+						<label class="custom-control-label" for="toggle-id-1"></label>
+					</div>
+				</div>
 			</div>
-			<div class="w-100 ml-3 pt-1">
-
-
-				<h6 class="font-500 font-14 pb-2"  (click)="editDescription()" [hidden]="this.editingDescription">{{this._uw.tixPreview.description}}</h6>
-				<div class="input-style input-style-2">
-					<span class="input-style-1-active color-highlight" [hidden]="!this.editingDescription">Descripción</span>
-					<input class="form-control" type="number" placeholder="{{this._uw.tixPreview.description}}" value="{{this._uw.tixPreview.description}}"  [hidden]="!this.editingDescription">
+			<div class="d-flex mb-4">
+				<div>
+					<img src="{{this._uw.imagePreviewProduct}}" class="rounded-sm" width="80">
 				</div>
-				<h6 class="font-500 font-14 pb-2"  (click)="editCategory()" [hidden]="this.editingCategory">{{this._uw.tixPreview.category}}</h6>
-				<div class="input-style input-style-1 input-required" [hidden]="!this.editingCategory">
-					<span class="color-highlight">Categoria</span>
-					<em><i class="fa fa-angle-down"></i></em>
-						<select    id="category" 
-						 >
-							<option *ngFor="let category of _uw.categories" >{{category.tittle}}</option>
-							
-					</select>	
-				</div>
-
-				<div class="input-style input-style-2">
-					<span class="input-style-1-active color-highlight" [hidden]="!this.editingColor">Categoria</span>
-					<input class="form-control" type="number" placeholder="{{this._uw.tixPreview.color}}" value="{{this._uw.tixPreview.color}}"  [hidden]="!this.editingColor">
-				</div>
-
-				<h6 class="font-500 font-14 pb-2"  (click)="editColor()" [hidden]="this.editingColor">{{this._uw.tixPreview.color}}</h6>
-				<div class="input-style input-style-2">
-					<span class="input-style-1-active color-highlight" [hidden]="!this.editingColor">Color</span>
-					<input class="form-control" type="number" placeholder="{{this._uw.tixPreview.color}}" value="{{this._uw.tixPreview.color}}"  [hidden]="!this.editingColor">
-				</div>
-
-				<h6 class="font-500 font-14 pb-2"  (click)="editTalla()" [hidden]="this.editingTalla">{{this._uw.tixPreview.talla}}</h6>
-				<div class="input-style input-style-2">
-					<span class="input-style-1-active color-highlight" [hidden]="!this.editingTalla">Talla</span>
-					<input class="form-control" type="number" placeholder="{{this._uw.tixPreview.talla}}" value="{{this._uw.tixPreview.talla}}"  [hidden]="!this.editingTalla">
-				</div>
-
-
-				<h4 (click)="editPrice()" [hidden]="this.editingPrice">${{this._uw.tixPreview.globalPrice}}</h4>
-				<span class="input-style-1-active color-highlight"  [hidden]="!this.editingPrice">Precio ($USD)</span>
-				<input class="form-control" type="number" placeholder="1" value="{{this._uw.tixPreview.globalPrice}}" [hidden]="!this.editingPrice">
-
-				
-			</div>
-		</div>
 			
-		<a  class="close-menu btn btn-full gradient-dark font-13 btn-m font-600 mt-3 rounded-s" (click)="saveEditing()" [hidden]="!editingPrice && !editingDescription" style="color: white; font-size: 1.5em !important;">Aplicar cambios</a>
-	<div></div>
-	<div></div>
-	<div></div>
-	<div></div>
-	</div>
+				<div class="w-100 ml-3 pt-1">
+
+
+					<h6 class="font-500 font-14 pb-2"  (click)="editDescription()" [hidden]="this.editingDescription">{{this._uw.tixPreview.description}}</h6>
+					<div class="input-style input-style-2">
+						<span class="input-style-1-active color-highlight" [hidden]="!this.editingDescription">Descripción</span>
+						<input class="form-control" type="text" placeholder="{{this._uw.tixPreview.description}}" 
+							value="{{this._uw.tixPreview.description}}"
+						formControlName="description" [hidden]="!this.editingDescription">
+					</div>
+					<h6 class="font-500 font-14 pb-2"  (click)="editCategory()" [hidden]="this.editingCategory">{{this._uw.tixPreview.category}}</h6>
+					<div class="input-style input-style-1 input-required" [hidden]="!this.editingCategory">
+						<span class="color-highlight">Categoria</span>
+						<em><i class="fa fa-angle-down"></i></em>
+							<select    id="category" *ngIf="_uw.categories?.length > 0" 
+							 >
+								<option *ngFor="let category of _uw.categories" >{{category.tittle}}</option>
+								
+						</select>	
+					</div>
+
+				<!-- 	<div class="input-style input-style-2">
+						<span class="input-style-1-active color-highlight" [hidden]="!this.editingColor">Color</span>
+						<input class="form-control" type="number" placeholder="{{this._uw.tixPreview.color}}" value="{{this._uw.tixPreview.color}}"  [hidden]="!this.editingColor" formControlName="color">
+					</div> -->
+
+					<h6 class="font-500 font-14 pb-2"  (click)="editColor()" [hidden]="this.editingColor">{{this._uw.tixPreview.color}}</h6>
+					<div class="input-style input-style-2">
+						<span class="input-style-1-active color-highlight" [hidden]="!this.editingColor">Color</span>
+						<input class="form-control" type="text" placeholder="{{this._uw.tixPreview.color}}" value="{{this._uw.tixPreview.color}}" [hidden]="!this.editingColor" formControlName="color">
+					</div>
+
+					<h6 class="font-500 font-14 pb-2"  (click)="editTalla()" [hidden]="this.editingTalla">{{this._uw.tixPreview.tallas}}</h6>
+					<div class="input-style input-style-2">
+						<span class="input-style-1-active color-highlight" [hidden]="!this.editingTalla">Talla</span>
+						<input class="form-control" type="text" placeholder="{{this._uw.tixPreview.tallas}}" value="{{this._uw.tixPreview.tallas}}"  [hidden]="!this.editingTalla" formControlName="tallas">
+					</div>
+
+
+					<h4 (click)="editPrice()" [hidden]="this.editingPrice">${{this._uw.tixPreview.globalPrice}}</h4>
+					<span class="input-style-1-active color-highlight"  [hidden]="!this.editingPrice">Precio ($USD)</span>
+					<input class="form-control" type="number" placeholder="1" value="{{this._uw.tixPreview.globalPrice}}" [hidden]="!this.editingPrice" formControlName="globalPrice">
+
+					
+				</div>
+
+			</div>
+				
+			<a  class="close-menu btn btn-full gradient-dark font-13 btn-m font-600 mt-3 rounded-s" (click)="saveEditing()" [hidden]="!editingPrice && !editingDescription" style="color: white; font-size: 1.5em !important;">Aplicar cambios</a>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		</div>
+	</form>	
 </div>
 
 

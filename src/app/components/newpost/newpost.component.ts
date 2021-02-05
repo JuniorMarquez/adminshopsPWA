@@ -4,7 +4,7 @@ import { Location } from '@angular/common';
 import { Router } from '@angular/router';
 import { UserWService } from "../../services/user-w.service";
 import { CategoryInterface } from '../../models/category-interface';
-import { TixInterface } from '../../models/tix-interface'; 
+import { PostInterface } from '../../models/post-interface'; 
 import { DataApiService } from '../../services/data-api.service';
 import { HttpClient } from  '@angular/common/http';
 import { isError } from "util";
@@ -14,91 +14,73 @@ import { FilePreviewModel } from '../../../assets/file-picker/src/lib/file-previ
 import { FormBuilder, FormGroup,  Validators } from '@angular/forms';
 import { ValidationError } from '../../../assets/file-picker/src/lib/validation-error.model';
 
-
 @Component({
-  selector: 'app-new-product',
-  templateUrl: './new-product.component.html',
-  styleUrls: ['./new-product.component.css']
+  selector: 'app-newpost',
+  templateUrl: './newpost.component.html',
+  styleUrls: ['./newpost.component.css']
 })
-export class NewProductComponent implements OnInit {
-    adapter = new DemoFilePickerAdapter(this.http,this._uw);
+export class NewpostComponent implements OnInit {
+	    adapter = new DemoFilePickerAdapter(this.http,this._uw);
   @ViewChild('uploader', { static: true }) uploader: FilePickerComponent;
    myFiles: FilePreviewModel[] = [];
 
-ngFormAddtixs: FormGroup;
+ngFormAddpost: FormGroup;
   submitted = false;
+
   constructor(
 	private route:ActivatedRoute,
-  private dataApi: DataApiService,
+	private dataApi: DataApiService,
 	private location: Location,
 	public _uw:UserWService,
-  private  http: HttpClient,
-  private router: Router,
-  private formBuilder: FormBuilder
+	private  http: HttpClient,
+	private router: Router,
+	private formBuilder: FormBuilder
   	) { }
-
     public categories:CategoryInterface;
-    public tixs:TixInterface;
+    public posts:PostInterface;
     public editingPrice=false;
     public editingDescription=false;
     public all = true;
     public isError = false;
     public isLogged =false;
     public images:any[]=[];
-    public tix : TixInterface ={
-       // userd:"",
-      productName:"",
-      description:"",
-      // notes:"",
-      category:"categoría",
-      // check:[],
-      // codigo:"",
-      color:"",
-      // con:[],
-      // colection:"",
-      globalPrice:0,
+
+    public post : PostInterface ={
+      tittle:"",
+      post:"",
+      status:"",
       images:[]
-      // modelo:"",
-      // new:true,
-      // sin:[],
-      // status:"",
-      // tallas:[],
-      // typePrice:"global"
     };
+
 
     loadAPI = null;
     url = "assets/assetsadmin/scripts/jquery.js";
     url2 = "assets/assetsadmin/scripts/bootstrap.min.js";
     url3 = "assets/assetsadmin/scripts/custom.js";
-
-
-  sendTix(){
+   sendPost(){
       this.submitted = true;
-      if (this.ngFormAddtixs.invalid) {
-        this._uw.errorFormAddtixs=true;
+      if (this.ngFormAddpost.invalid) {
+        this._uw.errorFormAddpost=true;
       return;
         } 
-      this._uw.errorFormAddtixs=false;
-      this.tix = this.ngFormAddtixs.value;
-      this.tix.status="activated";
-      this.tix.images=this._uw.images;
-      return this.dataApi.saveTixFree(this.tix)
+      this._uw.errorFormAddpost=false;
+      this.post = this.ngFormAddpost.value;
+      this.post.status = "activated";
+      this.post.images=this._uw.images;
+      return this.dataApi.savePostFree(this.post)
         .subscribe(
         );
   }  
    finish(){
     if (this._uw.errorFormAddtixs){
-      this.sendTix();
+      this.sendPost();
     }
-    this.router.navigate(['/mytixs'])
+    this.router.navigate(['/blog'])
   }
 
-setCategory(cate){
-   this.tix.category=cate;
-}
+
 
   ngOnInit() {
-      this.getAllCategories();
   		if (this._uw.loaded==true){
           this.loadAPI = new Promise(resolve => {
             this.loadScript();
@@ -108,24 +90,11 @@ setCategory(cate){
         }
       this._uw.loaded=true;
       this._uw.images=[];
-      this.ngFormAddtixs = this.formBuilder.group({
-      productName: ['', [Validators.required]],
-      description: ['', [Validators.required]],
-      category: ['', [Validators.required]],
-      color:['', [Validators.required]],
-      globalPrice: [0,[Validators.required]]
+      this.ngFormAddpost = this.formBuilder.group({
+      tittle: ['', [Validators.required]],
+      post: ['', [Validators.required]]
       });
   }
-    getAllCategories(){
-        this.dataApi.getAllCategories().subscribe((res:any) => {
-      if (res[0] === undefined){
-       }else{
-        this._uw.categories=res;  
-        this._uw.selectedQuan=res.length;          
-        }
-     });  
-    }
-
   public loadScript() {
       let node = document.createElement("script");
       node.src = this.url;
@@ -174,5 +143,4 @@ setCategory(cate){
     removeFile() {
       this.uploader.removeFileFromList(this.myFiles[0].fileName);
     }
-
 }

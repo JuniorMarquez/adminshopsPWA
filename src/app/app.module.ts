@@ -56,6 +56,7 @@ import { AccountComponent } from './components/account/account.component';
 import { LoginComponent } from './components/login/login.component';
 import { ViewProductComponent } from './components/view-product/view-product.component';
 import { NewProductComponent } from './components/new-product/new-product.component';
+import { NewpostComponent } from './components/newpost/newpost.component';
 
 @NgModule({
   declarations: [
@@ -72,6 +73,7 @@ import { NewProductComponent } from './components/new-product/new-product.compon
     ConfirmEqualValidatorDirective,
     ViewProductComponent,
     NewProductComponent,
+    NewpostComponent,
     
 
   ],

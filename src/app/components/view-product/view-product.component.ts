@@ -22,7 +22,7 @@ export class ViewProductComponent implements OnInit {
   @ViewChild('uploader', { static: true }) uploader: FilePickerComponent;
    myFiles: FilePreviewModel[] = [];
 
-ngFormAddtixs: FormGroup;
+formEdit: FormGroup;
   submitted = false;
   constructor(
   private formBuilder: FormBuilder,
@@ -39,6 +39,7 @@ ngFormAddtixs: FormGroup;
     public editingColor=false;
     public editingTalla=false;
     public tixs:TixInterface;
+    public tix:TixInterface;
     loadAPI = null;
     url = "assets/assetsadmin/scripts/jquery.js";
     url2 = "assets/assetsadmin/scripts/bootstrap.min.js";
@@ -53,6 +54,15 @@ ngFormAddtixs: FormGroup;
           });
         }
       this._uw.loaded=true;
+
+          this.formEdit = this.formBuilder.group({
+        // productName: ['', [Validators.required]],
+        description: ['', [Validators.required]],
+        // category: ['', [Validators.required]],
+        color:['', [Validators.required]],
+        tallas: ['', [Validators.required]],
+        globalPrice: [0,[Validators.required]]
+      });
   }
 
 public editCategory(){
@@ -76,7 +86,56 @@ public saveEditing(){
   this.editingDescription=false;
   this.editingColor=false;
   this.editingTalla=false;
+  this.sendTix();
 }
+    sendTix(){
+      console.log("entra a la funcion");
+      let id =this._uw.tixPreview.id;
+      this.submitted = true;
+      this.tix = this.formEdit;
+      if (this.tix.description=="") 
+        {
+          this.tix.description=this._uw.tixPreview.description;
+        } 
+        if (this.tix.color=="") 
+        {
+          this.tix.color=this._uw.tixPreview.color;
+        }
+        
+        // if (this.tix.globalPrice=="undefined") 
+        // {
+        //   this.tix.globalPrice=this._uw.tixPreview.globalPrice;
+        // } 
+      this._uw.errorFormAddtixs=false;
+      this.tix.images = this._uw.tixPreview.images;
+      this.tix.status = this._uw.tixPreview.status;
+
+      // this.tix.status="activated";
+      // if (this._uw.moccs){
+      //   this.tix.globalPrice=0;
+      //   this.tix.con=this.con;
+      //   this.tix.sin=this.sin;
+      // }
+      // if (this._uw.botas || this._uw.zapatos){
+      //   this.tix.price=this.tix.globalPrice;
+      // }
+      // if(this.tix.new){
+      //   this.tix.colection="new";
+      // }
+      // if (this.tix.category=="Botas y botines"){
+      //   this.tix.categoryFilter="Botas";
+      // }
+      // else{
+      //   this.tix.categoryFilter=this.tix.category;
+      // }
+      // this.tix.check=this.checks;
+      // this.tix.tallas=this.tallas;
+      // this.tix.images=this._uw.images;
+      return this.dataApi.updateTix(this.tix, id)
+        .subscribe(
+            tix => this.router.navigate(['/products'])
+        );
+    }
 
   public loadScript() {
       let node = document.createElement("script");

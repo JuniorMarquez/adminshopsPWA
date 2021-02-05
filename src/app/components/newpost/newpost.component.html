@@ -1,4 +1,4 @@
-<div id="article-1" class="menu menu-box-top menu-box-bottom-full rounded-0 " data-menu-height="100%" style="display: block; height: 100%;">
+<div id="article-2" class="menu menu-box-top menu-box-bottom-full rounded-0 " data-menu-height="100%" style="display: block; height: 100%;">
 	<!-- <form  class=""[formGroup]="ngFormAddtixs" (ngSubmit) ="sendTix()" > -->
 		<div class="" style="margin-top: 100px;z-index:1;">
 			<div clfhrass="content">
@@ -34,17 +34,17 @@
 						    [accept]="'image/*'"
 						    (fileAdded)="onFileAdded($event)">
 						</ngx-file-picker>
-						<form  class=""[formGroup]="ngFormAddtixs" (ngSubmit) ="sendTix()" >
+						<form  class=""[formGroup]="ngFormAddpost" (ngSubmit) ="sendPost()" >
 							<!-- <h4 class="bolder">Minimalist Fields</h4>
 							<p>
 							These boxes will react to them when you type or select a value.
 							</p> -->
 							<div class="input-style input-style-1 input-required">
 								<!-- <i class="input-icon fa fa-shopping-basket"></i> -->
-								<span class="color-highlight">Nombre del productos</span>
+								<span class="color-highlight">Titulo del post</span>
 								<em>(required)</em>
 								<!-- <input type="name" placeholder="Nombre del producto">		 -->
-								<input type="text" class="form-control" id="productName" formControlName="productName" placeholder="Nombre del producto" [(ngModel)]="tix.productName"
+								<input type="text" class="form-control" id="tittle" formControlName="tittle" placeholder="Titulo del post" [(ngModel)]="post.tittle"
 								>
 							</div>
 
@@ -53,11 +53,11 @@
 
 
 							<div class="input-style input-style-1 input-required">
-								<span class="color-highlight">Descripción</span>
+								<span class="color-highlight">Contenido</span>
 								<em>(required)</em>
 								<!-- <textarea placeholder="Descripcion"></textarea> -->
 
-								<textarea class="form-control height-80" id="description" formControlName="description" placeholder="Descripción" [(ngModel)]="tix.description"></textarea>
+								<textarea class="form-control height-80" id="post" formControlName="post" placeholder="Contenido del post" [(ngModel)]="post.post"></textarea>
 								
 
 
@@ -65,40 +65,16 @@
 
 							</div>
 							
-							<div class="input-style input-style-1 input-required"  *ngIf="_uw.categories?.length > 0">
-								<span class="color-highlight">Categoria</span>
-								<em><i class="fa fa-angle-down"></i></em>
-									<select    id="category" formControlName="category" [(ngModel)]="tix.category"
-									  
-							 >
-										<option *ngFor="let category of _uw.categories" (click)=setCategory(category.tittle)>{{category.tittle}}</option>
-										
-								</select>
-														
-							</div>
+					
 
-							<div class="input-style input-style-1 input-required">
-								<span class="color-highlight">Color</span>
-								<em>(required)</em>
-								<input type="text" class="form-control" id="color" formControlName="color" placeholder="Color" [(ngModel)]="tix.color"
-								>
-								
-							</div>	
-
-							<div class="input-style input-style-1 input-required">
-								<span class="color-highlight">Precio</span>
-								<em>(required)</em>
-								<input type="number" class="form-control" id="precio" formControlName="globalPrice" placeholder="Precio" [(ngModel)]="tix.globalPrice"
-								>
-								
-							</div>		
+							
 						</form>	
 					</div>
 				</div>
 				<div class="divider"></div>
 			</div>
 		</div>
-		<a (click)="sendTix()" class="close-menu btn btn-l rounded-sm font-600 btn-full btn-margins gradient-dark" style="color: white; font-size: 1.5em !important;">Ok</a>
-		   <!-- <button type="button" (click)="sendTix()">Guardar</button> -->
+		<a (click)="sendPost()" class="close-menu btn btn-l rounded-sm font-600 btn-full btn-margins gradient-dark" style="color: white; font-size: 1.5em !important;">Ok</a>
+		   <!-- <button type="button" (click)="sendPost()">Guardar</button> -->
 	
 </div>

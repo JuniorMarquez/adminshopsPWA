@@ -10,7 +10,8 @@ import {
 	AccountComponent,
 	LoginComponent,
 	ViewProductComponent,
-	NewProductComponent
+	NewProductComponent,
+	NewpostComponent
 	}from "./components/index.paginas";
 
 	import { AuthGuard } from './guards/auth.guard';
@@ -29,6 +30,7 @@ const app_routes: Routes = [
 	{path:'login',component:LoginComponent},
 	{path:'viewproduct', component:ViewProductComponent},
 	{path:'newproduct', component:NewProductComponent},
+	{path:'newpost', component:NewpostComponent},
 	{path:'**',pathMatch:'full',redirectTo:''}
 	];
 	export const app_routing = RouterModule.forRoot(app_routes);

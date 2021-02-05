@@ -3,8 +3,8 @@ import { HttpClient, HttpHeaders }  from '@angular/common/http';
 import { Observable } from 'rxjs/internal/Observable';
 import { map } from 'rxjs/operators';
 import { AuthService } from './auth.service';
-import { TixInterface } from '../models/tix-interface';
 import { PostInterface } from '../models/post-interface';
+import { TixInterface } from '../models/tix-interface';
 import { BookInterface } from '../models/book-interface';
 import { CardInterface } from '../models/card-interface';
 import { InfoInterface } from '../models/info-interface';
@@ -14,9 +14,6 @@ import { UserWService } from "./user-w.service";
 import { OrderInterface } from '../models/order-interface';
 import { CategoryInterface } from '../models/category-interface';
 	
-
-
-
 
 @Injectable({
   providedIn: 'root'
@@ -146,6 +143,12 @@ export class DataApiService {
 		.post<TixInterface>(url_api, tix)
 		.pipe(map(data => data));
 	}
+	savePostFree(post :PostInterface){
+		const url_api='https://db.buckapi.com:3027/api/posts';
+		return this.http
+		.post<PostInterface>(url_api, post)
+		.pipe(map(data => data));
+	}
 	saveTix(tix :TixInterface){
 		let token = this.authService.getToken();
 		const url_api='https://db.buckapi.com:3027/api/tixes?access_token${token}';
@@ -154,10 +157,10 @@ export class DataApiService {
 		.pipe(map(data => data));
 	}
 	updateTix(tix :TixInterface, id: string){
-		let token = this.authService.getToken();
-		const url_api=`https://db.buckapi.com:3027/api/tixes/${id}/?access_token$={token}`;
+		// let token = this.authService.getToken();
+		const url_api=`https://db.buckapi.com:3027/api/tixes/${id}`;
 		return this.http
-		.put<TixInterface>(url_api, tix,{headers: this.headers})
+		.put<TixInterface>(url_api, tix)
 		.pipe(map(data => data));
 	}
 	updateBook(book :BookInterface, id: string){
