@@ -29,26 +29,29 @@
 </div>
 
 
-<div id="article-3" class="menu menu-box-left menu-box-bottom-full rounded-0 " data-menu-height="100%" style="display: block; height: 100%;">
+<div id="article-3" class="menu menu-box-left menu-box-bottom-full rounded-0 " data-menu-height="100%" style="display: block; height: 100%; width: 100%;">
 	<!-- <form  class=""[formGroup]="ngFormAddtixs" (ngSubmit) ="sendTix()" > -->
 		<div class="" style="margin-top: 100px;z-index:1;">
 			<div clfhrass="content">
 				<div class="card-top pt-4 pl-3 pr-3">
 					<a  class="close-menu icon icon-s rounded-l bg-theme color-theme "><i class="fa fa-arrow-left"></i></a>
-					{{this._uw.orderSelected.npedido}}
+					
 				</div>
-				<div class="card card-style">
-					<div class="content mb-0">
-				<h4>{{this._uw.orderSelected.personaContacto}}</h4>
-				<h5>{{this._uw.orderSelected.email}}</h5>
-				<h5>{{this._uw.orderSelected.telefono}}</h5>
-				<h5>{{this._uw.orderSelected.direccion}}</h5>
-					</div>
-				</div>
+				
 
 				<div class="card card-style">
 					<div class="content mb-0">
-						
+						<div class="content mb-0">
+							<h4 style="text-align: right;"> 	{{this._uw.orderSelected.npedido}}
+	<h4>{{this._uw.orderSelected.personaContacto}}</h4>
+			<h5>{{this._uw.orderSelected.email}}</h5>
+			<h5>{{this._uw.orderSelected.telefono}}</h5>
+			<h5>{{this._uw.orderSelected.direccion}}</h5></h4>
+			<h4>{{this._uw.orderSelected.personaContacto}}</h4>
+			<h5>{{this._uw.orderSelected.email}}</h5>
+			<h5>{{this._uw.orderSelected.telefono}}</h5>
+			<h5>{{this._uw.orderSelected.direccion}}</h5>
+						</div>
 					<div class="todo-list list-group list-custom-large mr-2">
 				<a  *ngFor="let product of this._uw.orderSelected.car">
 				<img src="{{product.images[0]}}" width="60" class="rounded-xl mr-3">
