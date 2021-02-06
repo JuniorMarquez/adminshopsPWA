@@ -53,10 +53,11 @@
 				<a  *ngFor="let product of this._uw.orderSelected.car">
 				<img src="{{product.images[0]}}" width="80" class="rounded-xl mr-3" style="width: 60px !important;">
 				<span>{{product.productName}} ({{product.quantity}}  {{product.presentacion}}) </span>
+				<span>					
 				<strong>PVP: {{product.globalPrice | number:'1.0-0' }} </strong>
-					<span style="color: #2f9b35;"> {{product.beneficio}}%
+					<span class="d-block pt-2 font-12" style="color: #2f9b35;"> {{product.beneficio}}%
 					</span>
-			
+				</span>
 				<div class="form-check icon-check">
 				<input class="form-check-input" type="checkbox" value="" id="check1">
 				<i class="icon-check-1 fa fa-thumbs-down color-gray-dark font-16"></i>
