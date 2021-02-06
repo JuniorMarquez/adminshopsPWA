@@ -9,9 +9,9 @@
 			<!-- 	<h5 class="font-16 font-600" [hidden]="{{order.currency != 'usd'}}">{{order.personaContacto}} $USD {{order.total | number:'1.2-2'}}</h5>
 				<h5 class="font-16 font-600"  [hidden]="{{order.currency != 'colp'}}">{{order.personaContacto}} COLP {{order.total | number:'1.0-0'}}</h5>
 				<h5 class="font-16 font-600"  [hidden]="{{order.currency != 'bs'}}">{{order.personaContacto}} BsS {{order.total | number:'1.0-0'}}</h5> -->
-				<p class="line-height-s mt-1 opacity-70">{{order.email}} <span><strong [hidden]='{{order.currency != "usd"}}'> $USD {{order.total | number:'1.2-2'}}</strong>
-					<strong [hidden]='{{order.currency != "colp"}}'> COLP {{order.total | number:'1.0-0'}}</strong>
-					<strong [hidden]='{{order.currency != "bs"}}'> BsS {{order.total | number:'1.0-0'}}</strong></span>
+				<p class="line-height-s mt-1 opacity-70">{{order.email}} <span><strong [hidden]="order.currency != usd"> $USD {{order.total | number:'1.2-2'}}</strong>
+					<strong [hidden]="order.currency != colp"> COLP {{order.total | number:'1.0-0'}}</strong>
+					<strong [hidden]="order.currency != bs"> BsS {{order.total | number:'1.0-0'}}</strong></span>
 				</p>
 			</div>
 			<div class="align-self-center pl-3">
