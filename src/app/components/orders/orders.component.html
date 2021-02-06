@@ -12,9 +12,10 @@
 				<p class="line-height-s mt-1 opacity-70">{{order.email}}
 				<br>
 					 <span>
-					 	<strong [hidden]="order.currency != 'usd'"> $USD {{order.total | number:'1.2-2'}}</strong>
+					 	<strong [hidden]="order.currency != 'usd'"> $USD {{order.total | number:'1.2-2'}} </strong>
 						<strong [hidden]="order.currency != 'colp'"> COLP {{order.total | number:'1.0-0'}}</strong>
 						<strong [hidden]="order.currency != 'bs'"> BsS {{order.total | number:'1.0-0'}}</strong>
+						 ({{order.metodo}})
 					</span>
 				</p>
 			</div>
@@ -36,7 +37,15 @@
 					<a  class="close-menu icon icon-s rounded-l bg-theme color-theme "><i class="fa fa-arrow-left"></i></a>
 					
 				</div>
-			
+				<div class="card card-style">
+					<div class="content mb-0">
+				<h4>{{this._uw.orderSelected.personaContacto}}</h4>
+				<h5>{{this._uw.orderSelected.email}}</h5>
+				<h5>{{this._uw.orderSelected.telefono}}</h5>
+				<h5>{{this._uw.orderSelected.dirección}}</h5>
+					</div>
+				</div>
+
 				<div class="card card-style">
 					<div class="content mb-0">
 						
