@@ -46,6 +46,11 @@ export class OrdersComponent implements OnInit {
         }
       this._uw.loaded=true;
   }
+  setOrder(order){
+    let orderToView = tix;
+    this._uw.orderSelected=orderToView;
+
+  }
 
     getOrdersTamano(){
          this.dataApi

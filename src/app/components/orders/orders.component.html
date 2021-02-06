@@ -1,6 +1,6 @@
 <div id="page">	
 	<div class="content mb-0">
-		<a href="page-chat.html" class="d-flex mb-3"  *ngFor="let order of orders; index as i" >
+		<a data-menu="article-3" class="d-flex mb-3"  *ngFor="let order of orders; index as i" (click)=setOrder(order)>
 			<i class="fa fa-check color-magenta-dark" [hidden]="order.status != 'completed'"> </i>
 			
 			<i class="fa fa-circle color-green-dark" [hidden]="order.status != 'new'"> </i>
@@ -25,4 +25,39 @@
 		<div class="divider mb-3"></div>
 		
 	</div>
+</div>
+
+
+<div id="article-3" class="menu menu-box-top menu-box-bottom-full rounded-0 " data-menu-height="100%" style="display: block; height: 100%;">
+	<!-- <form  class=""[formGroup]="ngFormAddtixs" (ngSubmit) ="sendTix()" > -->
+		<div class="" style="margin-top: 100px;z-index:1;">
+			<div clfhrass="content">
+				<div class="card-top pt-4 pl-3 pr-3">
+					<a  class="close-menu icon icon-s rounded-l bg-theme color-theme "><i class="fa fa-arrow-up"></i></a>
+					
+				</div>
+			
+				<div class="card card-style">
+					<div class="content mb-0">
+						
+					
+					</div>
+				</div>
+				<div class="divider"></div>
+			</div>
+		</div>
+	
+		 	 <div class="todo-list list-group list-custom-large mr-2">
+				<a  *ngFor="let product of this_uw.orderSelected.car">
+				<img src="{{product.images[0]}}" width="60" class="rounded-xl mr-3">
+				<span>{{product.productName}}</span>
+				<strong>{{product.quantity}} x {{product.globalPrice}}</strong>
+				<div class="form-check icon-check">
+				<input class="form-check-input" type="checkbox" value="" id="check1">
+				<i class="icon-check-1 fa fa-thumbs-down color-gray-dark font-16"></i>
+				<i class="icon-check-2 fa fa-thumbs-up font-16 color-highlight"></i>
+			</div>
+			</a>
+			</div>
+	
 </div>
