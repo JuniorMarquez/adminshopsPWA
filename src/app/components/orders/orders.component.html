@@ -51,7 +51,7 @@
 						</div>
 					<div class="todo-list list-group list-custom-large mr-2">
 				<a  *ngFor="let product of this._uw.orderSelected.car">
-				<img src="{{product.images[0]}}" width="60" class="rounded-xl mr-3">
+				<img src="{{product.images[0]}}" width="80" class="rounded-xl mr-3" style="width: 60px !important;">
 				<span>{{product.productName}} ({{product.quantity}}  {{product.presentacion}}) </span>
 				<strong>Precio pág: {{product.globalPrice | number:'1.0-0' }}</strong>
 				<div class="form-check icon-check">
