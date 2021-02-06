@@ -70,7 +70,7 @@ export class DataApiService {
 		return (this.books = this.http.get(url_api));
 	}
 	getAllTixs(){
-		const url_api = 'https://db.buckapi.com:3027/api/tixes?filter[where][status]=activated';
+		const url_api = 'https://db.buckapi.com:3025/api/tixes?filter[where][status]=activated';
 		return this.http.get(url_api);
 	}
 	getAllPosts(){
@@ -78,21 +78,21 @@ export class DataApiService {
 		return this.http.get(url_api);
 	}
 	getAllTixsNew(){
-		const url_api = 'https://db.buckapi.com:3027/api/tixes?filter[where][and][0][status]=activated&filter[where][and][1][colection]=new';
+		const url_api = 'https://db.buckapi.com:3025/api/tixes?filter[where][and][0][status]=activated&filter[where][and][1][colection]=new';
 		return this.http.get(url_api);
 	}
 	getAllTixsReturn(){
-		const url_api = 'https://db.buckapi.com:3027/api/tixes?filter[where][status]=activated';
+		const url_api = 'https://db.buckapi.com:3025/api/tixes?filter[where][status]=activated';
 		return (this.tixs = this.http.get(url_api));
 	}
 	getTixsFilter(cat:string){
 		let cate = cat;
-		const url_api = "https://db.buckapi.com:3027/api/tixes?filter[where][category]="+cate;
+		const url_api = "https://db.buckapi.com:3025/api/tixes?filter[where][category]="+cate;
 		return (this.tixs = this.http.get(url_api));
 	}
 	getTixById(id:string){
 		let indice = id;
-		const url_api=`https://db.buckapi.com:3027/api/tixes/${indice}`;
+		const url_api=`https://db.buckapi.com:3025/api/tixes/${indice}`;
 		this.tix = this.http.get(url_api);
 		return (this.tix);
 	}
@@ -114,7 +114,7 @@ export class DataApiService {
 		return (this.info);
 	}
 	getPending(){
-		const url_api='https://db.buckapi.com:3027/api/tixes?filter[where][status]=pending';
+		const url_api='https://db.buckapi.com:3025/api/tixes?filter[where][status]=pending';
 		return (this.tixs = this.http.get(url_api));
 	}
 	getUsersPending(){
@@ -138,7 +138,7 @@ export class DataApiService {
 		return (this.cards = this.http.get(url_api));
 	}
 	saveTixFree(tix :TixInterface){
-		const url_api='https://db.buckapi.com:3027/api/tixes';
+		const url_api='https://db.buckapi.com:3025/api/tixes';
 		return this.http
 		.post<TixInterface>(url_api, tix)
 		.pipe(map(data => data));
@@ -151,14 +151,14 @@ export class DataApiService {
 	}
 	saveTix(tix :TixInterface){
 		let token = this.authService.getToken();
-		const url_api='https://db.buckapi.com:3027/api/tixes?access_token${token}';
+		const url_api='https://db.buckapi.com:3025/api/tixes?access_token${token}';
 		return this.http
 		.post<TixInterface>(url_api, tix,{headers: this.headers})
 		.pipe(map(data => data));
 	}
 	updateTix(tix :TixInterface, id: string){
 		// let token = this.authService.getToken();
-		const url_api=`https://db.buckapi.com:3027/api/tixes/${id}`;
+		const url_api=`https://db.buckapi.com:3025/api/tixes/${id}`;
 		return this.http
 		.put<TixInterface>(url_api, tix)
 		.pipe(map(data => data));
@@ -179,7 +179,7 @@ export class DataApiService {
 	}
 	deleteTix(id: string){
 		const token = this.authService.getToken();
-		const url_api=`https://db.buckapi.com:3027/api/tixes/${id}/?access_token$={token}`;
+		const url_api=`https://db.buckapi.com:3025/api/tixes/${id}/?access_token$={token}`;
 		return this.http
 		.delete<TixInterface>(url_api, {headers: this.headers})
 		.pipe(map(data => data));
