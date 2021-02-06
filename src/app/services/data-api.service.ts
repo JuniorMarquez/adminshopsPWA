@@ -46,11 +46,11 @@ export class DataApiService {
   		Authorization: this.authService.getToken()
   		});
   	getOrderPending(){	
-		const url_api='https://db.buckapi.com:3025/api/orders?filter[where][status]=new';
+		const url_api='https://db.buckapi.com:3025/api/order?filter[where][status]=new';
 		return (this.orders = this.http.get(url_api));
 	}
 	getOrders(){	
-		const url_api = 'https://db.buckapi.com:3025/api/orders';
+		const url_api = 'https://db.buckapi.com:3025/api/order';
 		return this.http.get(url_api);
 	}
 	getAllCategories(){
