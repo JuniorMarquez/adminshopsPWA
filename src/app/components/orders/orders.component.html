@@ -52,8 +52,8 @@
 					<div class="todo-list list-group list-custom-large mr-2">
 				<a  *ngFor="let product of this._uw.orderSelected.car">
 				<img src="{{product.images[0]}}" width="60" class="rounded-xl mr-3">
-				<span>{{product.productName}}</span>
-				<strong>{{product.quantity}} x {{product.globalPrice | number:'1.0-0' }}</strong>
+				<span>{{product.productName}} ({{product.quantity}}  {{product.presentacion}}) </span>
+				<strong>Precio pág: {{product.globalPrice | number:'1.0-0' }}</strong>
 				<div class="form-check icon-check">
 				<input class="form-check-input" type="checkbox" value="" id="check1">
 				<i class="icon-check-1 fa fa-thumbs-down color-gray-dark font-16"></i>
