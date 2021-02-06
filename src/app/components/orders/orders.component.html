@@ -7,7 +7,7 @@
 			<div>
 				<h5 class="font-16 font-600" style="text-transform: capitalize;">{{order.personaContacto}} </h5>
 				<p class="line-height-s mt-1 opacity-70">{{order.email}}
-				
+				</br>
 					 <span>
 					 	<strong [hidden]="order.currency != 'usd'"> $USD {{order.total | number:'1.2-2'}}</strong>
 						<strong [hidden]="order.currency != 'colp'"> COLP {{order.total | number:'1.0-0'}}</strong>
