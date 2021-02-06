@@ -47,7 +47,7 @@ export class OrdersComponent implements OnInit {
       this._uw.loaded=true;
   }
   setOrder(order){
-    let orderToView = tix;
+    let orderToView = order;
     this._uw.orderSelected=orderToView;
 
   }
