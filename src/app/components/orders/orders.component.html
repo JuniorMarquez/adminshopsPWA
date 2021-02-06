@@ -1,9 +1,9 @@
 <div id="page">	
 	<div class="content mb-0">
 		<a href="page-chat.html" class="d-flex mb-3"  *ngFor="let order of orders; index as i" >
-			<i class="fa fa-check color-magenta-dark" [hidden]="order.tstaus != 'completed'"> </i>
+			<i class="fa fa-check color-magenta-dark" [hidden]="order.status != 'completed'"> </i>
 			<div>
-			<i class="fa fa-circle color-green-dark" [hidden]="order.tstaus != 'new'"> </i>
+			<i class="fa fa-circle color-green-dark" [hidden]="order.status != 'new'"> </i>
 			<div>
 				<img src="assets/assetsadmin/images/pictures/order.jpg" width="60" class="rounded-xl mr-3">
 			</div>
