@@ -5,14 +5,14 @@
 				<img src="assets/assetsadmin/images/pictures/order.jpg" width="60" class="rounded-xl mr-3">
 			</div>
 			<div>
-				<h5 class="font-16 font-600" style="text-transform: capitalize !important; ">{{order.personaContacto}} </h5>
+				<h5 class="font-16 font-600" style="text-transform: capitalize;">{{order.personaContacto}} </h5>
 				<p class="line-height-s mt-1 opacity-70">{{order.email}}
-				
-					 <h5>
+				<br>
+					 <span>
 					 	<strong [hidden]="order.currency != 'usd'"> $USD {{order.total | number:'1.2-2'}}</strong>
 						<strong [hidden]="order.currency != 'colp'"> COLP {{order.total | number:'1.0-0'}}</strong>
 						<strong [hidden]="order.currency != 'bs'"> BsS {{order.total | number:'1.0-0'}}</strong>
-					</h5>
+					</span>
 				</p>
 			</div>
 			<div class="align-self-center pl-3">
