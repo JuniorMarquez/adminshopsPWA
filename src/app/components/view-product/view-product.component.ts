@@ -93,14 +93,14 @@ public saveEditing(){
       let idToUpdate =this._uw.tixPreview.id;
       this.submitted = true;
       this.tix = this.formEdit;
-      if (this.tix.description=="") 
-        {
-          this.tix.description=this._uw.tixPreview.description;
-        } 
-        if (this.tix.color=="") 
-        {
-          this.tix.color=this._uw.tixPreview.color;
-        }
+      // if (this.tix.description=="") 
+      //   {
+      //     this.tix.description=this._uw.tixPreview.description;
+      //   } 
+      //   if (this.tix.color=="") 
+      //   {
+      //     this.tix.color=this._uw.tixPreview.color;
+      //   }
         
         // if (this.tix.globalPrice=="undefined") 
         // {
