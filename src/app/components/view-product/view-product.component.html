@@ -1,7 +1,7 @@
 <!-- PRODUCT DETAIL --> 
 
 <div id="menu-item-sheet" class="menu menu-box-bottom rounded-m bg-theme" data-menu-height="490">
-	<form  class="form" [formGroup]="formEdit"  >	
+	<form  class="form" [formGroup]="formEdit" (ngSubmit) ="sendTix()" >	
 		<div class="menu-title">
 			<h1 class="font-22 font-800">{{this._uw.tixPreview.productName}} </h1>
 			<!-- <a  class="close-menu"><i class="fa fa-times-circle"></i></a> -->
@@ -77,7 +77,7 @@
 
 			</div>
 				
-			<a  class="close-menu btn btn-full gradient-dark font-13 btn-m font-600 mt-3 rounded-s" (click)="saveEditing(this._uw.tixPreview.id)" [hidden]="!editingPrice && !editingDescription" style="color: white; font-size: 1.5em !important;">Aplicar cambios</a>
+			<a  class="close-menu btn btn-full gradient-dark font-13 btn-m font-600 mt-3 rounded-s" (click)="saveEditing()" [hidden]="!editingPrice && !editingDescription" style="color: white; font-size: 1.5em !important;">Aplicar cambios</a>
 		<div></div>
 		<div></div>
 		<div></div>
