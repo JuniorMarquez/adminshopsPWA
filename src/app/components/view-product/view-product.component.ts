@@ -111,7 +111,7 @@ public saveEditing(){
       this.tix.images = this._uw.tixPreview.images;
       this.tix.status = this._uw.tixPreview.status;
       this.tix.globalPrice = this.formEdit.value.globalPrice;
-       console.log("ya estamos dentro",+id);
+       console.log("ya estamos dentro",+this.id);
       // this.tix.status="activated";
       // if (this._uw.moccs){
       //   this.tix.globalPrice=0;
@@ -133,7 +133,7 @@ public saveEditing(){
       // this.tix.check=this.checks;
       // this.tix.tallas=this.tallas;
       // this.tix.images=this._uw.images;
-      return this.dataApi.updateTix(this.tix, id)
+      return this.dataApi.updateTix(this.tix, this._uw.tixPreview.id)
         .subscribe(
             tix => this.router.navigate(['/products'])
         );
