@@ -90,7 +90,7 @@ public saveEditing(){
   console.log("entra desde la funcion saveEditing ");
 }
     sendTix(){
-      
+
       let id =this._uw.tixPreview.id;
       this.submitted = true;
       this.tix = this.formEdit;
@@ -111,7 +111,7 @@ public saveEditing(){
       this.tix.images = this._uw.tixPreview.images;
       this.tix.status = this._uw.tixPreview.status;
       this.tix.globalPrice = this.formEdit.value.globalPrice;
-
+       console.log("ya estamos dentro",+id);
       // this.tix.status="activated";
       // if (this._uw.moccs){
       //   this.tix.globalPrice=0;
