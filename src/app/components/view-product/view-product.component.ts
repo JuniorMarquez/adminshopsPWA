@@ -80,16 +80,17 @@ public editColor(){
 public editDescription(){
   this.editingDescription=true;
 }
-public saveEditing(id: string){
+public saveEditing(){
   this.editingCategory=false;
   this.editingPrice=false;
   this.editingDescription=false;
   this.editingColor=false;
   this.editingTalla=false;
-  this.sendTix(id);
+  this.sendTix();
   console.log("entra desde la funcion saveEditing ");
 }
-    sendTix(idToUpdate: string){
+    sendTix(){
+      let idToUpdate =this._uw.tixPreview.id;
       this.submitted = true;
       this.tix = this.formEdit;
       if (this.tix.description=="") 
