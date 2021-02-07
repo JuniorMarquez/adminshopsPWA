@@ -89,9 +89,9 @@ public saveEditing(id: string){
   this.sendTix(id);
   console.log("entra desde la funcion saveEditing ");
 }
-    sendTix(id: string){
+    sendTix(idToUpdate: string){
 
-      let id =id;
+      let idToUpdate =idToUpdate;
       this.submitted = true;
       this.tix = this.formEdit;
       if (this.tix.description=="") 
@@ -111,7 +111,7 @@ public saveEditing(id: string){
       this.tix.images = this._uw.tixPreview.images;
       this.tix.status = this._uw.tixPreview.status;
       this.tix.globalPrice = this.formEdit.value.globalPrice;
-       console.log("ya estamos dentro",+id);
+       console.log("ya estamos dentro",+idToUpdate);
       // this.tix.status="activated";
       // if (this._uw.moccs){
       //   this.tix.globalPrice=0;
@@ -133,7 +133,7 @@ public saveEditing(id: string){
       // this.tix.check=this.checks;
       // this.tix.tallas=this.tallas;
       // this.tix.images=this._uw.images;
-      return this.dataApi.updateTix(this.tix, this._uw.tixPreview.id)
+      return this.dataApi.updateTix(this.tix, idToUpdate)
         .subscribe(
             tix => this.router.navigate(['/products'])
         );
