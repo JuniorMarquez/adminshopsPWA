@@ -109,6 +109,7 @@ public saveEditing(){
       this._uw.errorFormAddtixs=false;
       this.tix.images = this._uw.tixPreview.images;
       this.tix.status = this._uw.tixPreview.status;
+      this.tix.globalPrice = this._uw.tixPreview.globalPrice;
 
       // this.tix.status="activated";
       // if (this._uw.moccs){
