@@ -80,18 +80,18 @@ public editColor(){
 public editDescription(){
   this.editingDescription=true;
 }
-public saveEditing(){
+public saveEditing(id: string){
   this.editingCategory=false;
   this.editingPrice=false;
   this.editingDescription=false;
   this.editingColor=false;
   this.editingTalla=false;
-  this.sendTix();
+  this.sendTix(id);
   console.log("entra desde la funcion saveEditing ");
 }
-    sendTix(){
+    sendTix(id: string){
 
-      let id =this._uw.tixPreview.id;
+      let id =id;
       this.submitted = true;
       this.tix = this.formEdit;
       if (this.tix.description=="") 
@@ -111,7 +111,7 @@ public saveEditing(){
       this.tix.images = this._uw.tixPreview.images;
       this.tix.status = this._uw.tixPreview.status;
       this.tix.globalPrice = this.formEdit.value.globalPrice;
-       console.log("ya estamos dentro",+this._uw.tixPreview.id);
+       console.log("ya estamos dentro",+id);
       // this.tix.status="activated";
       // if (this._uw.moccs){
       //   this.tix.globalPrice=0;
