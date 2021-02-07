@@ -7,6 +7,7 @@
 			<div>
 				<img src="assets/assetsadmin/images/pictures/ordernew.jpg" width="60" class="rounded-xl mr-3"  [hidden]="order.status != 'new'">
 				<img src="assets/assetsadmin/images/pictures/ordersucces.jpg" width="60" class="rounded-xl mr-3" [hidden]="order.status != 'completed'">
+				<img src="assets/assetsadmin/images/pictures/orderprocess.jpg" width="60" class="rounded-xl mr-3" [hidden]="order.status != 'completed'">
 			</div>
 			<div>
 				<h5 class="font-16 font-600" style="text-transform: capitalize !important;">{{order.personaContacto}} </h5>
