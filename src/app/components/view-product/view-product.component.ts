@@ -86,7 +86,7 @@ public saveEditing(){
   this.editingDescription=false;
   this.editingColor=false;
   this.editingTalla=false;
-  this.sendTix();
+  // this.sendTix();
 }
     sendTix(){
       console.log("entra a la funcion");
@@ -109,7 +109,7 @@ public saveEditing(){
       this._uw.errorFormAddtixs=false;
       this.tix.images = this._uw.tixPreview.images;
       this.tix.status = this._uw.tixPreview.status;
-      this.tix.globalPrice = this._uw.tixPreview.globalPrice;
+      this.tix.globalPrice =  this.formEdit.value.globalPrice;
 
       // this.tix.status="activated";
       // if (this._uw.moccs){
