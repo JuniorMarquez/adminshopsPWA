@@ -90,8 +90,6 @@ public saveEditing(id: string){
   console.log("entra desde la funcion saveEditing ");
 }
     sendTix(idToUpdate: string){
-
-      let idToUpdate =idToUpdate;
       this.submitted = true;
       this.tix = this.formEdit;
       if (this.tix.description=="") 
