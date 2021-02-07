@@ -111,7 +111,7 @@ public saveEditing(){
       this.tix.images = this._uw.tixPreview.images;
       this.tix.status = this._uw.tixPreview.status;
       this.tix.globalPrice = this.formEdit.value.globalPrice;
-       console.log("ya estamos dentro",+this.id);
+       console.log("ya estamos dentro",+this._uw.tixPreview.id);
       // this.tix.status="activated";
       // if (this._uw.moccs){
       //   this.tix.globalPrice=0;
