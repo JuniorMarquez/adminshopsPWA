@@ -36,7 +36,8 @@
 					<div class="input-style input-style-2">
 						<span class="input-style-1-active color-highlight" [hidden]="!this.editingDescription">Descripción</span>
 						<input class="form-control" type="text" placeholder="{{this._uw.tixPreview.description}}" 
-							value="{{this._uw.tixPreview.description}}"
+						[(ngModel)]="this._uw.tixPreview.description"
+							
 						formControlName="description" [hidden]="!this.editingDescription">
 					</div>
 					<h6 class="font-500 font-14 pb-2"  (click)="editCategory()" [hidden]="this.editingCategory">{{this._uw.tixPreview.category}}</h6>
@@ -58,19 +59,19 @@
 					<h6 class="font-500 font-14 pb-2"  (click)="editColor()" [hidden]="this.editingColor">{{this._uw.tixPreview.color}}</h6>
 					<div class="input-style input-style-2">
 						<span class="input-style-1-active color-highlight" [hidden]="!this.editingColor">Color</span>
-						<input class="form-control" type="text" placeholder="{{this._uw.tixPreview.color}}" value="{{this._uw.tixPreview.color}}" [hidden]="!this.editingColor" formControlName="color">
+						<input class="form-control" type="text" placeholder="{{this._uw.tixPreview.color}}" [(ngModel)]="this._uw.tixPreview.color" [hidden]="!this.editingColor" formControlName="color">
 					</div>
 
 					<h6 class="font-500 font-14 pb-2"  (click)="editTalla()" [hidden]="this.editingTalla">{{this._uw.tixPreview.tallas}}</h6>
 					<div class="input-style input-style-2">
 						<span class="input-style-1-active color-highlight" [hidden]="!this.editingTalla">Talla</span>
-						<input class="form-control" type="text" placeholder="{{this._uw.tixPreview.tallas}}" value="{{this._uw.tixPreview.tallas}}"  [hidden]="!this.editingTalla" formControlName="tallas">
+						<input class="form-control" type="text" placeholder="{{this._uw.tixPreview.tallas}}"  [(ngModel)]="this._uw.tixPreview.tallas" [hidden]="!this.editingTalla" formControlName="tallas">
 					</div>
 
 
 					<h4 (click)="editPrice()" [hidden]="this.editingPrice">${{this._uw.tixPreview.globalPrice}}</h4>
 					<span class="input-style-1-active color-highlight"  [hidden]="!this.editingPrice">Precio ($USD)</span>
-					<input class="form-control" type="number" placeholder="1" value="{{this._uw.tixPreview.globalPrice}}" [hidden]="!this.editingPrice" formControlName="globalPrice">
+					<input class="form-control" type="number" placeholder="1"  [(ngModel)]="this._uw.tixPreview.globalPrice" [hidden]="!this.editingPrice" formControlName="globalPrice">
 
 					
 				</div>
